@@ -1,0 +1,16 @@
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+
+# IDE
+*.iml
+.idea/
+.vs/
+.vscode/
+
+# MacOS
+.DS_Store/
