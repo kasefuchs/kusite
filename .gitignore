@@ -6,6 +6,11 @@
 *.dylib
 *.test
 
+# Node
+pnpm-lock.yaml
+dist/
+node_modules/
+
 # IDE
 *.iml
 .idea/
