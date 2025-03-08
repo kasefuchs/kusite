@@ -2,6 +2,7 @@
   "name": "@kasefuchs/website-main",
   "type": "module",
   "version": "1.0.0",
+  "license": "Apache-2.0",
   "private": true,
   "scripts": {
     "dev": "rsbuild dev",
@@ -9,11 +10,15 @@
     "preview": "rsbuild preview"
   },
   "dependencies": {
+    "@kasefuchs/website-styles": "workspace:",
+    "classnames": "^2.5.1",
     "preact": "^10.26.4"
   },
   "devDependencies": {
     "@rsbuild/core": "^1.2.15",
     "@rsbuild/plugin-preact": "^1.3.1",
+    "@rsbuild/plugin-sass": "^1.2.2",
+    "@rsbuild/plugin-typed-css-modules": "^1.0.2",
     "@tsconfig/strictest": "^2.0.5",
     "globals": "^16.0.0",
     "typescript": "^5.8.2"
