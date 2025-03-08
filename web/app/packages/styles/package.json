@@ -1,0 +1,11 @@
+{
+  "name": "@kasefuchs/website-styles",
+  "type": "module",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "private": true,
+  "main": "src/index.scss",
+  "dependencies": {
+    "@fontsource/jetbrains-mono": "^5.2.5"
+  }
+}

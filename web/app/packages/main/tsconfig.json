@@ -5,8 +5,9 @@
     "rootDir": "src/",
 
     /* library */
-    "lib": ["DOM", "ES2020"],
     "jsx": "react-jsx",
+    "lib": ["DOM", "ES2020"],
+    "types": ["@rsbuild/core/types"],
     "target": "ES2020",
     "noEmit": true,
     "jsxImportSource": "preact",
