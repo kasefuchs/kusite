@@ -1,7 +1,7 @@
 import { createElement, render } from "preact";
 import Application from "./pages/Application.tsx";
 
-import "@kasefuchs/website-styles";
+import "./styles/index.scss"
 
 const container = document.getElementById("root");
 

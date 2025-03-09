@@ -1,5 +1,5 @@
 {
-  "name": "@kasefuchs/website-main",
+  "name": "@kasefuchs/website",
   "type": "module",
   "version": "1.0.0",
   "license": "Apache-2.0",
@@ -10,7 +10,7 @@
     "preview": "rsbuild preview"
   },
   "dependencies": {
-    "@kasefuchs/website-styles": "workspace:",
+    "@fontsource/jetbrains-mono": "^5.2.5",
     "classnames": "^2.5.1",
     "preact": "^10.26.4"
   },
