@@ -1,0 +1,24 @@
+.item {
+  height: 100%;
+
+  color: var(--color-text);
+
+  list-style: none;
+  align-content: center;
+
+  border-bottom: 2px solid transparent;
+
+  transition:
+    color 300ms,
+    border-bottom-color 300ms;
+
+  &.active {
+    color: var(--color-text-highlight);
+    border-bottom-color: var(--color-primary);
+  }
+
+  &:not(&.active):hover {
+    color: var(--color-text-highlight);
+    border-bottom-color: var(--color-text);
+  }
+}
