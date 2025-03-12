@@ -4,7 +4,7 @@
   max-width: 1600px;
   margin-inline: auto;
 
-  gap: 15px;
+  gap: 20px;
   padding: 15px;
 
   display: flex;
@@ -13,5 +13,22 @@
 }
 
 .content {
+  display: flex;
   flex-grow: 1;
+  flex-direction: row;
+}
+
+.main {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.widgets {
+  width: 300px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
 }
