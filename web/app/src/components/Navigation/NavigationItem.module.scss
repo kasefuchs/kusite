@@ -1,6 +1,8 @@
 .item {
   height: 100%;
 
+  display: inline-block;
+
   color: var(--color-text);
 
   list-style: none;
@@ -20,5 +22,16 @@
   &:not(&.active):hover {
     color: var(--color-text-highlight);
     border-bottom-color: var(--color-text);
+  }
+
+  & > * {
+    height: 100%;
+    display: inline-block;
+    align-content: center;
+  }
+
+  & > a {
+    color: inherit;
+    text-decoration: none;
   }
 }
