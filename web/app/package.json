@@ -10,8 +10,10 @@
     "preview": "rsbuild preview"
   },
   "dependencies": {
+    "@fontsource/jetbrains-mono": "^5.2.5",
     "classnames": "^2.5.1",
-    "preact": "^10.26.4"
+    "preact": "^10.26.4",
+    "react-router": "^7.3.0"
   },
   "devDependencies": {
     "@rsbuild/core": "^1.2.15",
