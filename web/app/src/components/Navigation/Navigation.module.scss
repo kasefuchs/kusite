@@ -1,32 +1,34 @@
-.item {
+.navigation-rail {
   height: 100%;
 
-  display: inline-block;
+  margin: 0;
+  padding: 0;
 
+  gap: 35px;
+  display: flex;
+  flex-direction: row;
+}
+
+.navigation-link {
   color: var(--color-text);
 
   list-style: none;
   align-content: center;
 
   border-bottom: 2px solid transparent;
+  text-decoration: none;
 
   transition:
     color 300ms,
     border-bottom-color 300ms;
 
-  &.active {
+  &.navigation-link-active {
     color: var(--color-text-highlight);
     border-bottom-color: var(--color-primary);
   }
 
-  &:not(&.active):hover {
+  &:not(&.navigation-link-active):hover {
     color: var(--color-text-highlight);
     border-bottom-color: var(--color-text);
-  }
-
-  & > * {
-    height: 100%;
-    display: inline-block;
-    align-content: center;
   }
 }

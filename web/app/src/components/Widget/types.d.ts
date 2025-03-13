@@ -1,6 +1,6 @@
 import type { ComponentChildren } from "preact";
 
 export interface WidgetProps {
-  title: string;
+  title: ComponentChildren;
   children?: ComponentChildren;
 }

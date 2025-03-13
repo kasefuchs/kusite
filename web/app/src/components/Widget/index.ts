@@ -1,2 +1,2 @@
 export { default as Widget } from "./Widget.tsx";
-export type { WidgetProps } from "./types.d.ts";
+export type { WidgetProps } from "./types";

@@ -6,11 +6,12 @@ import { Container } from "../Container";
 export default class Widget extends Component<WidgetProps> {
   public override render(props: WidgetProps): ComponentChildren {
     return (
-      <div className={style["widget"]}>
-        <span className={style["title"]} children={props.title} />
-        <Container>
-          <div className={style["content"]} children={props.children} />
-        </Container>
+      <div className={style["widgetContainer"]}>
+        <span className={style["widgetTitle"]} children={props.title} />
+        <Container
+          className={style["widgetContent"]}
+          children={props.children}
+        />
       </div>
     );
   }
