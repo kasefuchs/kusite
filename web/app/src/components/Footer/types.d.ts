@@ -1,5 +1,3 @@
-import type { ComponentChildren } from "preact";
+import type { HTMLProps } from "preact-compat";
 
-export interface FooterProps {
-  children?: ComponentChildren;
-}
+export type FooterProps = HTMLProps<HTMLDivElement>;

@@ -1,4 +1,4 @@
-.container {
+.application-container {
   width: 100%;
   height: 100%;
   max-width: 1600px;
@@ -12,19 +12,19 @@
   flex-direction: column;
 }
 
-.content {
+.application-content {
   display: flex;
   flex-grow: 1;
   flex-direction: row;
 }
 
-.main {
+.application-content-primary {
   display: flex;
   flex-grow: 1;
   flex-direction: column;
 }
 
-.widgets {
+.application-content-widgets {
   width: 300px;
 
   display: flex;

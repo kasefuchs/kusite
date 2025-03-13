@@ -1,5 +1,3 @@
-import type { ComponentChildren } from "preact";
+import type { HTMLProps } from "preact/compat";
 
-export interface ContainerProps {
-  children?: ComponentChildren;
-}
+export type ContainerProps = HTMLProps<HTMLDivElement>;

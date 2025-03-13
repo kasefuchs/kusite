@@ -1,14 +1,14 @@
-.widget {
+.widget-container {
   display: flex;
   flex-direction: column;
 
   gap: 15px;
 }
 
-.title {
+.widget-title {
   text-transform: uppercase;
 }
 
-.content {
+.widget-content {
   padding: 15px;
 }

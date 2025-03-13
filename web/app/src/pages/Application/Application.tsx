@@ -14,21 +14,21 @@ export default class Application extends Component {
   public override render(): ComponentChild {
     return (
       <BrowserRouter>
-        <div className={style["container"]}>
+        <div className={style["applicationContainer"]}>
           <Header icon={"https://avatars.githubusercontent.com/u/64592097"}>
             <NavigationRail>
               <NavigationLink to={"/"}>Home</NavigationLink>
               <NavigationLink to={"/blog"}>Blog</NavigationLink>
             </NavigationRail>
           </Header>
-          <div className={style["content"]}>
-            <div className={style["main"]}>
+          <div className={style["applicationContent"]}>
+            <div className={style["applicationContentPrimary"]}>
               <Routes>
                 <Route path={"/"} element={<Home />} />
                 <Route path={"/blog"} element={<Blog />} />
               </Routes>
             </div>
-            <div className={style["widgets"]}>
+            <div className={style["applicationContentWidgets"]}>
               <Widget title={"Test"}>Test</Widget>
             </div>
           </div>

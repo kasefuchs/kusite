@@ -1,16 +1,6 @@
-import type { ComponentChildren } from "preact";
-import type { To } from "react-router";
+import type { NavLinkProps } from "react-router";
+import type { HTMLProps } from "preact-compat";
 
-export interface NavigationRailProps {
-  children?: ComponentChildren;
-}
+export type NavigationRailProps = HTMLProps<HTMLDivElement>;
 
-export interface NavigationItemProps {
-  active?: boolean;
-  children?: ComponentChildren;
-}
-
-export interface NavigationLinkProps {
-  to: To;
-  children: ComponentChildren;
-}
+export type NavigationLinkProps = Omit<NavLinkProps, "className">;
