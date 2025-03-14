@@ -28,7 +28,7 @@ export default class Application extends Component {
                 <Route path={"/blog"} element={<Blog />} />
               </Routes>
             </div>
-            <div className={style["applicationContentWidgets"]}>
+            <div className={style["applicationContentSecondary"]}>
               <Widget title={"Test"}>Test</Widget>
             </div>
           </div>
