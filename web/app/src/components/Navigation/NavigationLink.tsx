@@ -13,7 +13,6 @@ export default class NavigationLink extends Component<NavigationLinkProps> {
   }
 
   public override render(props: NavigationLinkProps): ComponentChildren {
-
     return <NavLink {...props} className={NavigationLink.classNames} />;
   }
 }
