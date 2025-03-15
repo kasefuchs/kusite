@@ -1,4 +1,4 @@
-module github.com/kasefuchs/website
+module github.com/kasefuchs/kusite
 
 go 1.24.0
 
