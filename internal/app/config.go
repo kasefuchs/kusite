@@ -1,6 +1,6 @@
 package app
 
-import "github.com/kasefuchs/website/internal/pkg/server"
+import "github.com/kasefuchs/kusite/internal/pkg/server"
 
 // Config specifies application configuration.
 type Config struct {

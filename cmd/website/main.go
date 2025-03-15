@@ -5,19 +5,19 @@ import (
 	"os"
 
 	"github.com/hashicorp/hcl/v2/hclsimple"
-	"github.com/kasefuchs/website/internal/app"
-	"github.com/kasefuchs/website/internal/pkg/server"
+	"github.com/kasefuchs/kusite/internal/app"
+	"github.com/kasefuchs/kusite/internal/pkg/server"
 	"github.com/urfave/cli/v2"
 )
 
 func main() {
 	ca := &cli.App{
-		Name:  "website",
+		Name:  "kusite",
 		Usage: "My personal website",
 		Commands: []*cli.Command{
 			{
 				Name:  "server",
-				Usage: "Starts a website server",
+				Usage: "Starts a KuSite server",
 				Flags: []cli.Flag{
 					&cli.StringFlag{
 						Name:  "config",
