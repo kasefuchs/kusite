@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/kasefuchs/kusite/internal/pkg/web"
+
 	"github.com/hashicorp/hcl/v2/hclsimple"
 	"github.com/kasefuchs/kusite/internal/app"
 	"github.com/kasefuchs/kusite/internal/pkg/server"
@@ -28,6 +30,10 @@ func main() {
 				Action: func(ctx *cli.Context) error {
 					var cfg app.Config
 					if err := hclsimple.DecodeFile(ctx.String("config"), nil, &cfg); err != nil {
+						return err
+					}
+
+					if err := web.NewController(cfg.Web).Use(server.App); err != nil {
 						return err
 					}
 
