@@ -1,10 +1,10 @@
 import { Component, type ComponentChild } from "preact";
-import type { HeaderProps } from "./types";
 import { Container } from "../Container";
 import style from "./Header.module.scss";
+import type { Props } from "./types";
 
-export default class Header extends Component<HeaderProps> {
-  public override render(props: HeaderProps): ComponentChild {
+export default class extends Component<Props> {
+  public override render(props: Props): ComponentChild {
     return (
       <Container className={style["headerContainer"]}>
         <img className={style["headerIcon"]} src={props.icon} />

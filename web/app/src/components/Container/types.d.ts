@@ -1,3 +1,3 @@
 import type { HTMLProps } from "preact/compat";
 
-export type ContainerProps = HTMLProps<HTMLDivElement>;
+export type Props = HTMLProps<HTMLDivElement>;

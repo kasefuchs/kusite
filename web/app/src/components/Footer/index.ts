@@ -1,2 +1,2 @@
 export { default as Footer } from "./Footer.tsx";
-export type { FooterProps } from "./types";
+export type { Props as FooterProps } from "./types";

@@ -1,2 +1,2 @@
 export { default as Header } from "./Header.tsx";
-export type { HeaderProps } from "./types";
+export type { Props as HeaderProps } from "./types";

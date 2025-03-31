@@ -1,2 +1,2 @@
-export { default as withRouterParams } from "./withRouterParams.tsx";
-export type { WithRouterParamsProps } from "./types";
+export type { WithParamsProps } from "./types";
+export { default as withParams } from "./withParams.tsx";

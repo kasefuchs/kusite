@@ -1,0 +1,18 @@
+---
+main:
+  header:
+    navigation:
+      home: Home
+      blog: Blog
+
+  footer:
+    copyright: © {{year}} — Kasefuchs
+
+home:
+  primary:
+    welcome:
+      title: Welcome
+
+blog:
+  articles:
+    title: Articles

@@ -1,0 +1,26 @@
+.home-root,
+.home-root-primary,
+.home-root-secondary {
+  display: flex;
+  gap: 20px;
+}
+
+.home-root {
+  flex-grow: 1;
+  flex-direction: row;
+}
+
+.home-root-primary {
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.home-root-secondary {
+  width: 300px;
+  flex-shrink: 0;
+  flex-direction: column;
+
+  @media (max-width: 750px) {
+    display: none;
+  }
+}
