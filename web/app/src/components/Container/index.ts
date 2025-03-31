@@ -1,2 +1,2 @@
 export { default as Container } from "./Container.tsx";
-export type { ContainerProps } from "./types";
+export type { Props as ContainerProps } from "./types";

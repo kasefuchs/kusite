@@ -4,11 +4,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/kasefuchs/kusite/internal/pkg/web"
-
 	"github.com/hashicorp/hcl/v2/hclsimple"
 	"github.com/kasefuchs/kusite/internal/app"
 	"github.com/kasefuchs/kusite/internal/pkg/server"
+	"github.com/kasefuchs/kusite/internal/pkg/web"
 	"github.com/urfave/cli/v2"
 )
 

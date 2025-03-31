@@ -1,6 +1,6 @@
 import type { ComponentChildren } from "preact";
 
-export interface HeaderProps {
+export interface Props {
   icon: string;
   children?: ComponentChildren;
 }

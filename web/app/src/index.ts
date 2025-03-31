@@ -1,8 +1,6 @@
-import "preact/debug";
-import "./styles/index.scss";
-
 import { createElement, render } from "preact";
-import { Application } from "./pages/Application";
+import { default as Application } from "./Application";
+import "./styles/index.scss";
 
 const container = document.getElementById("root");
 
