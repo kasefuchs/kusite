@@ -1,15 +1,20 @@
+import Container from "#components/Container";
+import classNames from "classnames";
 import { Component, type ComponentChildren } from "preact";
-import { Container } from "../Container";
 import type { Props } from "./types";
-import style from "./Widget.module.scss";
+import * as styles from "./Widget.module.scss";
 
-export default class extends Component<Props> {
+export default class Widget extends Component<Props> {
   public override render(props: Props): ComponentChildren {
     return (
-      <div className={style["widgetContainer"]}>
-        <span className={style["widgetTitle"]} children={props.title} />
+      <div className={styles.widget}>
+        <span className={styles.title} children={props.title} />
         <Container
-          className={style["widgetContent"]}
+          {...props.containerProps}
+          className={classNames(
+            styles.content,
+            props.containerProps?.className,
+          )}
           children={props.children}
         />
       </div>

@@ -4,7 +4,7 @@ import { Component, type ComponentChildren } from "preact";
 import { I18nextProvider, initReactI18next } from "react-i18next";
 import type { Props, State } from "./types";
 
-export default class extends Component<Props, State> {
+export default class I18nProvider extends Component<Props, State> {
   public override readonly state: Readonly<State> = {
     initialized: false,
   };
@@ -16,7 +16,7 @@ export default class extends Component<Props, State> {
         .use(
           resourcesToBackend(
             (language: string, namespace: string) =>
-              import(`../../assets/locales/${language}/${namespace}.yml`),
+              import(`#assets/locales/${language}/${namespace}.yml`),
           ),
         )
         .init(

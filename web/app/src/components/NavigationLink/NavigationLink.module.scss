@@ -1,5 +1,7 @@
-.navigation-link {
-  color: var(--color-text);
+@use "~#styles/variables" as *;
+
+.link {
+  color: $color-text;
 
   list-style: none;
   align-content: center;
@@ -11,13 +13,13 @@
     color 300ms,
     border-bottom-color 300ms;
 
-  &.navigation-link-active {
-    color: var(--color-text-highlight);
-    border-bottom-color: var(--color-primary);
+  &.active {
+    color: $color-text-highlight;
+    border-bottom-color: $color-primary;
   }
 
-  &:not(&.navigation-link-active):hover {
-    color: var(--color-text-highlight);
-    border-bottom-color: var(--color-text);
+  &:not(&.active):hover {
+    color: $color-text-highlight;
+    border-bottom-color: $color-text;
   }
 }

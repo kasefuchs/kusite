@@ -6,6 +6,9 @@
 *.dylib
 *.test
 
+# Generated
+*.scss.d.ts
+
 # Node
 pnpm-lock.yaml
 dist/

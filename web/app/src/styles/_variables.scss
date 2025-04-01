@@ -1,13 +1,11 @@
-:root {
-  --font-primary: "Jetbrains Mono";
+$font-primary: "Jetbrains Mono";
 
-  --color-background: #0f0f0f;
-  --color-primary: #ff6600;
-  --color-text: #959595;
-  --color-text-highlight: #d9d9d9;
-  --color-widget: #121212;
-  --color-widget-border: #1a1a1a;
+$color-background: #0f0f0f;
+$color-primary: #ff6600;
+$color-text: #959595;
+$color-text-highlight: #d9d9d9;
+$color-widget: #121212;
+$color-widget-border: #1a1a1a;
 
-  --widget-border-radius: 5px;
-  --widget-border-width: 2px;
-}
+$widget-border-radius: 5px;
+$widget-border-width: 2px;

@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 html,
 body {
   border: 0;
@@ -6,8 +8,8 @@ body {
 
   box-sizing: border-box;
 
-  color: var(--color-text);
-  font-family: var(--font-primary), monospace;
+  color: $color-text;
+  font-family: $font-primary, monospace;
 }
 
 * {
@@ -21,5 +23,5 @@ body {
   display: flex;
   flex-direction: column;
 
-  background-color: var(--color-background);
+  background-color: $color-background;
 }
