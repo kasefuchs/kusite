@@ -1,11 +1,11 @@
 import classNames from "classnames";
 import { Component, type ComponentChildren } from "preact";
-import style from "./Container.module.scss";
+import * as styles from "./Container.module.scss";
 import type { Props } from "./types";
 
-export default class extends Component<Props> {
+export default class Container extends Component<Props> {
   public override render(props: Props): ComponentChildren {
-    const className = classNames(style["container"], props.className);
+    const className = classNames(styles.container, props.className);
 
     return <div {...props} className={className} />;
   }

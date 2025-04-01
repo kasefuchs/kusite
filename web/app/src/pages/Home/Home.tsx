@@ -1,22 +1,27 @@
+import { MarkdownWidget } from "#widgets/MarkdownWidget";
 import { Component, type ComponentChild } from "preact";
 import { withTranslation } from "react-i18next";
-import { Widget } from "../../components/Widget";
-import style from "./Home.module.scss";
+import * as styles from "./Home.module.scss";
 import type { Props } from "./types";
 
 class Home extends Component<Props> {
   public override render(props: Props): ComponentChild {
+    const { t } = props;
+
     return (
-      <div className={style["homeRoot"]}>
-        <div className={style["homeRootPrimary"]}>
-          <Widget title={props.i18n!.t("home.primary.welcome.title")} />
+      <div className={styles.root}>
+        <div className={styles.primary}>
+          <MarkdownWidget
+            title={t("primary.welcome.title")}
+            children={t("primary.welcome.content")}
+          />
         </div>
-        <div className={style["homeRootSecondary"]}>
-          <Widget title="Test" />
+        <div className={styles.secondary}>
+          <MarkdownWidget title="Test">Hello?</MarkdownWidget>
         </div>
       </div>
     );
   }
 }
 
-export default withTranslation("page")(Home);
+export default withTranslation("page", { keyPrefix: "home" })(Home);

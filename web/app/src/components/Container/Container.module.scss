@@ -1,5 +1,7 @@
+@use "~#styles/variables" as *;
+
 .container {
-  background-color: var(--color-widget);
-  border-radius: var(--widget-border-radius);
-  outline: var(--color-widget-border) solid var(--widget-border-width);
+  background-color: $color-widget;
+  border-radius: $widget-border-radius;
+  outline: $color-widget-border solid $widget-border-width;
 }

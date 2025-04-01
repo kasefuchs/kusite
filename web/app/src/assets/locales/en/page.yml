@@ -12,6 +12,10 @@ home:
   primary:
     welcome:
       title: Welcome
+      content: |
+        ## Lorem ipsum dolor sit amet
+
+        Otters so cute!
 
 blog:
   articles:

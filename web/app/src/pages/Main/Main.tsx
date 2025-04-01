@@ -1,47 +1,48 @@
+import Container from "#components/Container";
+import NavigationLink from "#components/NavigationLink";
+import Blog from "#pages/Blog";
+import Home from "#pages/Home";
 import { Component, type ComponentChild } from "preact";
 import { withTranslation } from "react-i18next";
 import { Route, Routes } from "react-router";
-import { Footer } from "../../components/Footer";
-import { Header } from "../../components/Header";
-import { NavigationLink } from "../../components/NavigationLink";
-import { NavigationRail } from "../../components/NavigationRail";
-import { Blog } from "../Blog";
-import { Home } from "../Home";
-import style from "./Main.module.scss";
-import { Props } from "./types";
+import * as styles from "./Main.module.scss";
+import type { Props } from "./types";
 
 class Main extends Component<Props> {
+  private static copyrightYear: number = new Date().getFullYear();
+
   public override render(props: Props): ComponentChild {
+    const { t } = props;
+
     return (
-      <main className={style["mainRoot"]}>
-        <Header icon={"https://avatars.githubusercontent.com/u/64592097"}>
-          <NavigationRail>
-            <NavigationLink
-              to={"/"}
-              children={props.i18n!.t("main.header.navigation.home")}
-            />
+      <main className={styles.root}>
+        <Container className={styles.header}>
+          <img
+            className={styles.headerIcon}
+            src={"https://avatars.githubusercontent.com/u/64592097"}
+          />
+          <nav className={styles.navigationRail}>
+            <NavigationLink to={"/"} children={t("header.navigation.home")} />
             <NavigationLink
               to={"/blog"}
-              children={props.i18n!.t("main.header.navigation.blog")}
+              children={t("header.navigation.blog")}
             />
-          </NavigationRail>
-        </Header>
-        <div className={style["mainContent"]}>
+          </nav>
+        </Container>
+        <div className={styles.content}>
           <Routes>
             <Route path={"/"} element={<Home />} />
             <Route path={"/blog"} element={<Blog />} />
           </Routes>
         </div>
-        <Footer>
+        <Container className={styles.footer}>
           <span
-            children={props.i18n!.t("main.footer.copyright", {
-              year: new Date().getFullYear(),
-            })}
+            children={t("footer.copyright", { year: Main.copyrightYear })}
           />
-        </Footer>
+        </Container>
       </main>
     );
   }
 }
 
-export default withTranslation("page")(Main);
+export default withTranslation("page", { keyPrefix: "main" })(Main);
