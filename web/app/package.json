@@ -25,6 +25,8 @@
     "i18next": "^24.2.3",
     "i18next-browser-languagedetector": "^8.0.4",
     "i18next-resources-to-backend": "^1.2.1",
+    "json-stringify-deterministic": "^1.0.12",
+    "localforage": "^1.10.0",
     "mobx": "^6.13.7",
     "mobx-react": "^9.2.0",
     "preact": "^10.26.4",
