@@ -8,9 +8,7 @@ import type { Props, State } from "./types";
 export default class I18nProvider extends Component<Props, State> {
   public static supportedLanguages: string[] = ["ru", "en"];
 
-  public override readonly state: Readonly<State> = {
-    initialized: false,
-  };
+  public override readonly state: Readonly<State> = { initialized: false };
 
   public override async componentDidMount(): Promise<void> {
     try {
@@ -32,6 +30,7 @@ export default class I18nProvider extends Component<Props, State> {
             nonExplicitSupportedLngs: true,
           },
           (error) => {
+            if (!error) return;
             if (error instanceof Array) {
               for (const err in error) console.error(err);
             } else {

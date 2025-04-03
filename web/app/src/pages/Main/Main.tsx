@@ -6,12 +6,14 @@ import Blog from "#pages/Blog";
 import Home from "#pages/Home";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { observer } from "mobx-react";
 import { Component, type ComponentChild, type ContextType } from "preact";
 import { withTranslation } from "react-i18next";
 import { Route, Routes } from "react-router";
 import * as styles from "./Main.module.scss";
 import type { Props } from "./types";
 
+@observer
 class Main extends Component<Props> {
   private static readonly copyrightYear: number = new Date().getFullYear();
 

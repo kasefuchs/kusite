@@ -1,13 +1,28 @@
+import type IPersistentStore from "#interfaces/stores/IPersistentStore";
 import I18nProvider from "#providers/I18nProvider";
 import i18next from "i18next";
 import { action, observable } from "mobx";
+import type { Data } from "./types";
 
-export default class I18nStore {
+export default class I18nStore implements IPersistentStore<Data> {
   private static readonly supportedLanguagesCount: number =
     I18nProvider.supportedLanguages.length;
 
   @observable
   public accessor language: string = i18next.language;
+
+  public get id(): string {
+    return "i18n" as const;
+  }
+
+  public dump(): Data {
+    return { language: this.language };
+  }
+
+  @action
+  public restore(data: Data): void {
+    this.language = data.language;
+  }
 
   @action
   public setLanguage(code: string): void {
