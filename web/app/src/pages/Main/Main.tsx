@@ -1,33 +1,50 @@
 import Container from "#components/Container";
+import HeaderIconButton from "#components/HeaderIconButton";
 import NavigationLink from "#components/NavigationLink";
+import RootStoreContext from "#contexts/RootStoreContext";
 import Blog from "#pages/Blog";
 import Home from "#pages/Home";
-import { Component, type ComponentChild } from "preact";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Component, type ComponentChild, type ContextType } from "preact";
 import { withTranslation } from "react-i18next";
 import { Route, Routes } from "react-router";
 import * as styles from "./Main.module.scss";
 import type { Props } from "./types";
 
 class Main extends Component<Props> {
-  private static copyrightYear: number = new Date().getFullYear();
+  private static readonly copyrightYear: number = new Date().getFullYear();
 
-  public override render(props: Props): ComponentChild {
-    const { t } = props;
+  public static override readonly contextType = RootStoreContext;
+  declare public readonly context: NonNullable<
+    ContextType<typeof RootStoreContext>
+  >;
+
+  public override render(): ComponentChild {
+    const { t } = this.props;
 
     return (
       <main className={styles.root}>
         <Container className={styles.header}>
           <img
-            className={styles.headerIcon}
+            className={styles.headerLogo}
             src={"https://avatars.githubusercontent.com/u/64592097"}
           />
-          <nav className={styles.navigationRail}>
-            <NavigationLink to={"/"} children={t("header.navigation.home")} />
-            <NavigationLink
-              to={"/blog"}
-              children={t("header.navigation.blog")}
-            />
-          </nav>
+          <div className={styles.headerContent}>
+            <nav className={styles.navigationRail}>
+              <NavigationLink to={"/"} children={t("header.navigation.home")} />
+              <NavigationLink
+                to={"/blog"}
+                children={t("header.navigation.blog")}
+              />
+            </nav>
+            <div className={styles.actionRail}>
+              <HeaderIconButton
+                onClick={() => this.context.i18n.nextLanguage()}
+                children={<FontAwesomeIcon icon={faGlobe} size="lg" />}
+              />
+            </div>
+          </div>
         </Container>
         <div className={styles.content}>
           <Routes>

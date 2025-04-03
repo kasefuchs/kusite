@@ -23,8 +23,10 @@
       "react-dom/*": ["./node_modules/preact/compat/*"],
       "#assets/*": ["./src/assets/*"],
       "#components/*": ["./src/components/*"],
+      "#contexts/*": ["./src/contexts/*"],
       "#pages/*": ["./src/pages/*"],
       "#providers/*": ["./src/providers/*"],
+      "#stores/*": ["./src/stores/*"],
       "#styles/*": ["./src/styles/*"],
       "#utilities/*": ["./src/utilities/*"],
       "#widgets/*": ["./src/widgets/*"]

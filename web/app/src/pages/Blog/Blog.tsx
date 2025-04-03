@@ -5,8 +5,8 @@ import * as styles from "./Blog.module.scss";
 import type { Props } from "./types";
 
 class Blog extends Component<Props> {
-  public override render(props: Props): ComponentChild {
-    const { t } = props;
+  public override render(): ComponentChild {
+    const { t } = this.props;
 
     return (
       <div className={styles.root}>
