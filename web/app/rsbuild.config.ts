@@ -9,6 +9,7 @@ export default defineConfig({
     title: "Kusite",
   },
   output: {
+    polyfill: "usage",
     cssModules: {
       namedExport: true,
     },
@@ -25,9 +26,15 @@ export default defineConfig({
       "#components": "./src/components",
       "#pages": "./src/pages",
       "#providers": "./src/providers",
+      "#stores": "./src/stores",
       "#styles": "./src/styles",
       "#utilities": "./src/utilities",
       "#widgets": "./src/widgets",
+    },
+  },
+  performance: {
+    chunkSplit: {
+      strategy: "single-vendor",
     },
   },
 });

@@ -14,25 +14,33 @@
 
 .header,
 .footer {
-  @include flexbox(row, center, center);
+  @include flexbox(row, center, center, 0);
 
   height: 45px;
 }
 
 .content,
+.header-content,
 .navigation-rail {
   @include flexbox(row, flex-start, stretch, 1);
 }
 
-.navigation-rail {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0 25px;
-  gap: 35px;
+.action-rail {
+  @include flexbox(row, flex-start, center, 0);
 }
 
-.header-icon {
+.action-rail,
+.header-content,
+.navigation-rail {
+  gap: 35px;
+  height: 100%;
+}
+
+.header-content {
+  padding: 0 25px;
+}
+
+.header-logo {
   width: 45px;
   height: 45px;
   outline: $color-widget-border solid $widget-border-width;
