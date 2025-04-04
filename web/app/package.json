@@ -27,11 +27,11 @@
     "i18next-resources-to-backend": "^1.2.1",
     "json-stringify-deterministic": "^1.0.12",
     "localforage": "^1.10.0",
+    "markdown-to-jsx": "^7.7.4",
     "mobx": "^6.13.7",
     "mobx-react": "^9.2.0",
     "preact": "^10.26.4",
     "react-i18next": "^15.4.1",
-    "react-markdown": "^10.1.0",
     "react-router": "^7.3.0"
   },
   "devDependencies": {

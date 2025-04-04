@@ -9,7 +9,7 @@ export default class NavigationLink extends Component<Props> {
     return classNames(styles.link, props.isActive ? styles.active : undefined);
   }
 
-  public override render(props: Props): ComponentChildren {
-    return <NavLink {...props} className={NavigationLink.getClassNames} />;
+  public override render(): ComponentChildren {
+    return <NavLink {...this.props} className={NavigationLink.getClassNames} />;
   }
 }

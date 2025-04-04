@@ -10,11 +10,11 @@ import { observer } from "mobx-react";
 import { Component, type ComponentChild, type ContextType } from "preact";
 import { withTranslation } from "react-i18next";
 import { Route, Routes } from "react-router";
-import * as styles from "./Main.module.scss";
+import * as styles from "./Root.module.scss";
 import type { Props } from "./types";
 
 @observer
-class Main extends Component<Props> {
+class Root extends Component<Props> {
   private static readonly copyrightYear: number = new Date().getFullYear();
 
   public static override readonly contextType = RootStoreContext;
@@ -56,7 +56,7 @@ class Main extends Component<Props> {
         </div>
         <Container className={styles.footer}>
           <span
-            children={t("footer.copyright", { year: Main.copyrightYear })}
+            children={t("footer.copyright", { year: Root.copyrightYear })}
           />
         </Container>
       </main>
@@ -64,4 +64,4 @@ class Main extends Component<Props> {
   }
 }
 
-export default withTranslation("page", { keyPrefix: "main" })(Main);
+export default withTranslation("page", { keyPrefix: "root" })(Root);
