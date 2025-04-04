@@ -29,7 +29,6 @@ export default defineConfig({
       "#stores": "./src/stores",
       "#styles": "./src/styles",
       "#utilities": "./src/utilities",
-      "#widgets": "./src/widgets",
     },
   },
   performance: {

@@ -10,9 +10,9 @@ export default class StoreProvider extends Component<Props, State> {
 
   public override async componentDidMount(): Promise<void> {
     try {
-      await this.rootStore.loadStorageData();
+      await this.rootStore.restoreStoresData();
     } finally {
-      this.rootStore.registerPersistenceListeners();
+      this.rootStore.registerPersistenceReactions();
       this.setState({ initialized: true });
     }
   }

@@ -1,3 +1,3 @@
-import type { HTMLProps } from "preact/compat";
+import type { JSX } from "preact";
 
-export type Props = HTMLProps<HTMLButtonElement>;
+export type Props = JSX.HTMLAttributes<HTMLButtonElement>;

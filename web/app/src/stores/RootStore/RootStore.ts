@@ -9,7 +9,7 @@ export default class RootStore implements IStore {
   private readonly storage = localforage.createInstance({ name: this.id });
 
   @observable
-  public accessor i18n: I18nStore = new I18nStore();
+  public accessor i18n = new I18nStore();
 
   private readonly persistentStores: IPersistentStore[] = [this.i18n];
 
@@ -17,14 +17,14 @@ export default class RootStore implements IStore {
     return "root" as const;
   }
 
-  public async loadStorageData(): Promise<void> {
+  public async restoreStoresData(): Promise<void> {
     for (const store of this.persistentStores) {
       const data = await this.storage.getItem(store.id);
       if (data !== null) store.restore(data);
     }
   }
 
-  public registerPersistenceListeners(): IReactionDisposer[] {
+  public registerPersistenceReactions(): IReactionDisposer[] {
     return this.persistentStores.map((store) =>
       reaction(
         () => stringify(store.dump()),

@@ -1,4 +1,4 @@
-import Main from "#pages/Main";
+import Main from "#pages/Root";
 import I18nProvider from "#providers/I18nProvider";
 import StoreProvider from "#providers/StoreProvider";
 import { Component, type ComponentChildren } from "preact";
