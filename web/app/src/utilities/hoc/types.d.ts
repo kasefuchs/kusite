@@ -1,4 +1,4 @@
-import type { Params } from "react-router";
+import type { Params } from "wouter";
 
 export interface WithParamsProps {
   params: Params;

@@ -4,12 +4,11 @@ import NavigationLink from "#components/NavigationLink";
 import RootStoreContext from "#contexts/RootStoreContext";
 import Blog from "#pages/Blog";
 import Home from "#pages/Home";
-import { faGlobe } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { RiGlobalLine } from '@remixicon/react';
 import { observer } from "mobx-react";
 import { Component, type ComponentChild, type ContextType } from "preact";
 import { withTranslation } from "react-i18next";
-import { Route, Routes } from "react-router";
+import { Route, Switch } from "wouter";
 import * as styles from "./Root.module.scss";
 import type { Props } from "./types";
 
@@ -43,16 +42,16 @@ class Root extends Component<Props> {
             <div className={styles.actionRail}>
               <HeaderIconButton
                 onClick={() => this.context.i18n.nextLanguage()}
-                children={<FontAwesomeIcon icon={faGlobe} size="lg" />}
+                children={<RiGlobalLine size={20} />}
               />
             </div>
           </div>
         </Container>
         <div className={styles.content}>
-          <Routes>
-            <Route path={"/"} element={<Home />} />
-            <Route path={"/blog"} element={<Blog />} />
-          </Routes>
+          <Switch>
+            <Route path={"/"} children={<Home />} />
+            <Route path={"/blog"} children={<Blog />} />
+          </Switch>
         </div>
         <Container className={styles.footer}>
           <span

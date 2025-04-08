@@ -1,5 +1,5 @@
-import type IPersistentStore from "#interfaces/stores/IPersistentStore";
 import I18nProvider from "#providers/I18nProvider";
+import type IPersistentStore from "#types/stores/IPersistentStore";
 import i18next from "i18next";
 import { action, observable } from "mobx";
 import type { Data } from "./types";
