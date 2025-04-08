@@ -8,13 +8,10 @@ export default class StoreProvider extends Component<Props, State> {
 
   public override readonly state: Readonly<State> = { initialized: false };
 
-  public override async componentDidMount(): Promise<void> {
-    try {
-      await this.rootStore.restoreStoresData();
-    } finally {
-      this.rootStore.registerPersistenceReactions();
-      this.setState({ initialized: true });
-    }
+  public override componentDidMount(): void {
+    this.rootStore.restoreStoresData();
+    this.rootStore.registerPersistenceReactions();
+    this.setState({ initialized: true });
   }
 
   public override render(): ComponentChildren {

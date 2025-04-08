@@ -1,3 +1,5 @@
-import type { NavLinkProps } from "react-router";
+import type { LinkProps } from "wouter";
 
-export type Props = Omit<NavLinkProps, "className">;
+export type Props = Omit<LinkProps, "className", "href"> & {
+  to: string;
+};

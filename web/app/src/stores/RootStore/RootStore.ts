@@ -1,13 +1,10 @@
-import IPersistentStore from "#interfaces/stores/IPersistentStore";
-import IStore from "#interfaces/stores/IStore";
 import I18nStore from "#stores/I18nStore";
-import stringify from "json-stringify-deterministic";
-import localforage from "localforage";
+import type IPersistentStore from "#types/stores/IPersistentStore";
+import type IStore from "#types/stores/IStore";
+import stringify from "json-stable-stringify";
 import { IReactionDisposer, observable, reaction } from "mobx";
 
 export default class RootStore implements IStore {
-  private readonly storage = localforage.createInstance({ name: this.id });
-
   @observable
   public accessor i18n = new I18nStore();
 
@@ -17,9 +14,9 @@ export default class RootStore implements IStore {
     return "root" as const;
   }
 
-  public async restoreStoresData(): Promise<void> {
+  public restoreStoresData(): void {
     for (const store of this.persistentStores) {
-      const data = await this.storage.getItem(store.id);
+      const data = localStorage.getItem(store.id);
       if (data !== null) store.restore(data);
     }
   }
@@ -27,9 +24,8 @@ export default class RootStore implements IStore {
   public registerPersistenceReactions(): IReactionDisposer[] {
     return this.persistentStores.map((store) =>
       reaction(
-        () => stringify(store.dump()),
-        async (serialized) =>
-          await this.storage.setItem(store.id, JSON.parse(serialized)),
+        () => stringify(store.dump())!,
+        (serialized) => localStorage.setItem(store.id, serialized),
       ),
     );
   }

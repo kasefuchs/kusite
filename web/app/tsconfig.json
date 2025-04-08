@@ -24,7 +24,7 @@
       "#assets/*": ["./src/assets/*"],
       "#components/*": ["./src/components/*"],
       "#contexts/*": ["./src/contexts/*"],
-      "#interfaces/*": ["./src/interfaces/*"],
+      "#types/*": ["./src/types/*"],
       "#pages/*": ["./src/pages/*"],
       "#providers/*": ["./src/providers/*"],
       "#stores/*": ["./src/stores/*"],
