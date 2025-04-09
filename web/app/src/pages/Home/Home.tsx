@@ -11,10 +11,7 @@ class Home extends Component<Props> {
     return (
       <div className={styles.root}>
         <div className={styles.primary}>
-          <MarkdownWidget
-            title={t("primary.welcome.title")}
-            children={t("primary.welcome.content")}
-          />
+          <MarkdownWidget title={t("primary.welcome.title")} children={t("primary.welcome.content")} />
         </div>
         <div className={styles.secondary}>
           <MarkdownWidget title="Test">Hello?</MarkdownWidget>

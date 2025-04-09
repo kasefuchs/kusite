@@ -1,2 +1,2 @@
-export { default } from "./StoreProvider.tsx";
+export { default } from "./StoreProvider";
 export type { Props as StoreProviderProps } from "./types";

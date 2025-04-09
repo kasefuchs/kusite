@@ -1,2 +1,2 @@
-export { default } from "./NavigationLink.tsx";
+export { default } from "./NavigationLink";
 export type { Props as NavigationLinkProps } from "./types";
