@@ -17,12 +17,6 @@ export default class Markdown extends Component<Props> {
   public override render(): ComponentChildren {
     const className = classNames(styles.markdown, this.props.className);
 
-    return (
-      <ReactMarkdown
-        {...this.props}
-        options={Markdown.options}
-        className={className}
-      />
-    );
+    return <ReactMarkdown {...this.props} options={Markdown.options} className={className} />;
   }
 }

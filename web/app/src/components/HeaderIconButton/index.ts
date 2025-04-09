@@ -1,2 +1,2 @@
-export { default } from "./HeaderIconButton.tsx";
+export { default } from "./HeaderIconButton";
 export type { Props as HeaderIconButtonProps } from "./types";

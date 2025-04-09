@@ -4,7 +4,7 @@ import NavigationLink from "#components/NavigationLink";
 import RootStoreContext from "#contexts/RootStoreContext";
 import Blog from "#pages/Blog";
 import Home from "#pages/Home";
-import { RiGlobalLine } from '@remixicon/react';
+import { RiGlobalLine } from "@remixicon/react";
 import { observer } from "mobx-react";
 import { Component, type ComponentChild, type ContextType } from "preact";
 import { withTranslation } from "react-i18next";
@@ -17,9 +17,7 @@ class Root extends Component<Props> {
   private static readonly copyrightYear: number = new Date().getFullYear();
 
   public static override readonly contextType = RootStoreContext;
-  declare public readonly context: NonNullable<
-    ContextType<typeof RootStoreContext>
-  >;
+  declare public readonly context: NonNullable<ContextType<typeof RootStoreContext>>;
 
   public override render(): ComponentChild {
     const { t } = this.props;
@@ -27,17 +25,11 @@ class Root extends Component<Props> {
     return (
       <main className={styles.root}>
         <Container className={styles.header}>
-          <img
-            className={styles.headerLogo}
-            src={"https://avatars.githubusercontent.com/u/64592097"}
-          />
+          <img className={styles.headerLogo} src={"https://avatars.githubusercontent.com/u/64592097"} />
           <div className={styles.headerContent}>
             <nav className={styles.navigationRail}>
               <NavigationLink to={"/"} children={t("header.navigation.home")} />
-              <NavigationLink
-                to={"/blog"}
-                children={t("header.navigation.blog")}
-              />
+              <NavigationLink to={"/blog"} children={t("header.navigation.blog")} />
             </nav>
             <div className={styles.actionRail}>
               <HeaderIconButton
@@ -54,9 +46,7 @@ class Root extends Component<Props> {
           </Switch>
         </div>
         <Container className={styles.footer}>
-          <span
-            children={t("footer.copyright", { year: Root.copyrightYear })}
-          />
+          <span children={t("footer.copyright", { year: Root.copyrightYear })} />
         </Container>
       </main>
     );
