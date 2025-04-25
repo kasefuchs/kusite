@@ -10,3 +10,4 @@ export interface State {
 }
 
 export type Language = (typeof I18nProvider)["supportedLanguages"][number];
+export type Namespace = (typeof I18nProvider)["namespaces"][number];

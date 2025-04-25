@@ -1,4 +1,4 @@
-import { defineConfig } from "@rsbuild/core";
+import { defineConfig, loadEnv } from "@rsbuild/core";
 import { pluginPreact } from "@rsbuild/plugin-preact";
 import { pluginSass } from "@rsbuild/plugin-sass";
 import { pluginTypedCSSModules } from "@rsbuild/plugin-typed-css-modules";
@@ -14,12 +14,10 @@ export default defineConfig({
       namedExport: true,
     },
   },
-  plugins: [
-    pluginPreact(),
-    pluginSass(),
-    pluginTypedCSSModules(),
-    pluginYaml(),
-  ],
+  plugins: [pluginPreact(), pluginSass(), pluginTypedCSSModules(), pluginYaml()],
+  source: {
+    define: loadEnv({ prefixes: ["KUSITE_"] }).publicVars,
+  },
   resolve: {
     alias: {
       "#assets": "./src/assets",

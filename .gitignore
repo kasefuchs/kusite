@@ -17,6 +17,11 @@ node_modules/
 # Config
 config.hcl
 
+# Environment
+.env
+.env.production
+.env.development
+
 # IDE
 *.iml
 .idea/

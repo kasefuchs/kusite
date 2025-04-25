@@ -4,7 +4,7 @@ import NavigationLink from "#components/NavigationLink";
 import RootStoreContext from "#contexts/RootStoreContext";
 import Blog from "#pages/Blog";
 import Home from "#pages/Home";
-import { RiGlobalLine } from "@remixicon/react";
+import { RiEarthLine } from "@remixicon/react";
 import { observer } from "mobx-react";
 import { Component, type ComponentChild, type ContextType } from "preact";
 import { withTranslation } from "react-i18next";
@@ -32,10 +32,7 @@ class Root extends Component<Props> {
               <NavigationLink to={"/blog"} children={t("header.navigation.blog")} />
             </nav>
             <div className={styles.actionRail}>
-              <HeaderIconButton
-                onClick={() => this.context.i18n.nextLanguage()}
-                children={<RiGlobalLine size={20} />}
-              />
+              <HeaderIconButton onClick={() => this.context.i18n.nextLanguage()} children={<RiEarthLine size={24} />} />
             </div>
           </div>
         </Container>
