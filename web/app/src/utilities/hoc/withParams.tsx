@@ -1,5 +1,5 @@
 import type { ComponentType } from "preact";
-import { useParams, type Params } from "wouter";
+import { type Params, useParams } from "wouter";
 import type { WithParamsProps } from "./types";
 
 export default function withParams<P extends object>(Component: ComponentType<P & WithParamsProps>) {

@@ -26,6 +26,7 @@ export default class RootStore implements IStore {
       reaction(
         () => stringify(store.dump()),
         (serialized) => localStorage.setItem(store.id, serialized),
+        { name: `PersistenceReaction(${store.id})` },
       ),
     );
   }

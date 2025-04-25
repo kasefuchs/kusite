@@ -1,6 +1,7 @@
 package web
 
 import (
+	"io/fs"
 	"net/http"
 	"os"
 
@@ -12,25 +13,30 @@ import (
 type Controller struct {
 	// Web configuration.
 	config *Config
+
+	// The file system containing the root of the builded frontend.
+	filesystem fs.FS
 }
 
 // Use activates the controller.
 func (controller *Controller) Use(app *fiber.App) error {
-	fsys := os.DirFS(controller.config.Directory)
-
-	app.Use(
-		filesystemMiddleware.New(filesystemMiddleware.Config{
-			Root: http.FS(&fallbackFileSystem{
-				fileSystem:   fsys,
-				fallbackPath: "index.html",
+	if controller.config.Enabled {
+		app.Use(
+			filesystemMiddleware.New(filesystemMiddleware.Config{
+				Root: http.FS(controller.filesystem),
 			}),
-		}),
-	)
+		)
+	}
 
 	return nil
 }
 
 // NewController creates a new instance of the web Controller.
 func NewController(config *Config) *Controller {
-	return &Controller{config}
+	fsys := &fallbackFileSystem{
+		fileSystem:   os.DirFS(config.Directory),
+		fallbackPath: "index.html",
+	}
+
+	return &Controller{config, fsys}
 }

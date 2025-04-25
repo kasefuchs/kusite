@@ -1,3 +1,5 @@
+if (import.meta.env.DEV) await import("preact/debug");
+
 import { createElement, render } from "preact";
 import { default as Application } from "./Application";
 import "./styles/index.scss";

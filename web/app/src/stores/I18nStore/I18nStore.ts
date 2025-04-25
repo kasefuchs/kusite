@@ -34,6 +34,6 @@ export default class I18nStore implements IPersistentStore<Data> {
     const currentIndex = I18nProvider.supportedLanguages.indexOf(this.language);
     const nextIndex = (currentIndex + 1) % I18nStore.supportedLanguagesCount;
 
-    await this.setLanguage(I18nProvider.supportedLanguages[nextIndex]!);
+    await this.setLanguage(I18nProvider.supportedLanguages[nextIndex] ?? I18nProvider.fallbackLanguage);
   }
 }
