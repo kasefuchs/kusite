@@ -5,5 +5,5 @@ server {
 
 web {
   enabled   = true
-  directory = "web/app/dist"
+  directory = "web/applications/site/dist"
 }
