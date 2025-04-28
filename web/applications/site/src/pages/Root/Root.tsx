@@ -1,4 +1,3 @@
-import Container from "#components/Container";
 import HeaderIconButton from "#components/HeaderIconButton";
 import NavigationLink from "#components/NavigationLink";
 import RootStoreContext from "#contexts/RootStoreContext";
@@ -6,6 +5,7 @@ import Blog from "#pages/Blog";
 import Home from "#pages/Home";
 import * as styles from "#pages/Root/Root.module.scss";
 import type { Props } from "#pages/Root/types";
+import { Container } from "@kusite/components";
 import { RiEarthLine } from "@remixicon/react";
 import { observer } from "mobx-react";
 import { Component, type ComponentChild, type ContextType } from "preact";

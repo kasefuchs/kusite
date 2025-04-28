@@ -1,7 +1,7 @@
-import Container from "#components/Container";
-import type { Props } from "#components/Widget/types";
-import * as styles from "#components/Widget/Widget.module.scss";
+import { Container } from "@kusite/components";
 import { Component, type ComponentChildren } from "preact";
+import type { Props } from "./types";
+import * as styles from "./Widget.module.scss";
 
 export default class Widget extends Component<Props> {
   public override render(): ComponentChildren {

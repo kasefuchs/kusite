@@ -1,6 +1,5 @@
-if (import.meta.env.DEV) await import("preact/debug");
-
 import "#styles/index.scss";
+import "@kusite/components/index.css";
 import { createElement, render } from "preact";
 import { default as Application } from "./Application";
 

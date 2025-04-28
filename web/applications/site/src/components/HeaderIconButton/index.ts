@@ -1,3 +1,3 @@
-export { default } from "#components/HeaderIconButton/HeaderIconButton";
-export type { Props as HeaderIconButtonProps } from "#components/HeaderIconButton/types";
+export { default } from "./HeaderIconButton";
+export type { Props as HeaderIconButtonProps } from "./types";
 

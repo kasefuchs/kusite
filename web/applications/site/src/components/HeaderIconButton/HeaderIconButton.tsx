@@ -1,7 +1,7 @@
-import * as styles from "#components/HeaderIconButton/HeaderIconButton.module.scss";
-import type { Props } from "#components/HeaderIconButton/types";
 import classNames from "classnames";
 import { Component, type ComponentChildren } from "preact";
+import * as styles from "./HeaderIconButton.module.scss";
+import type { Props } from "./types";
 
 export default class HeaderIconButton extends Component<Props> {
   public override render(): ComponentChildren {

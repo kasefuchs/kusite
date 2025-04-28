@@ -30,3 +30,6 @@ config.hcl
 
 # MacOS
 .DS_Store/
+
+# Rslib
+.rslib/
