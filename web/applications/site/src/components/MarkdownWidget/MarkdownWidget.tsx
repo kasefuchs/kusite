@@ -1,7 +1,7 @@
 import Markdown from "#components/Markdown";
-import type { Props } from "#components/MarkdownWidget/types";
 import Widget from "#components/Widget";
 import { Component, type ComponentChildren } from "preact";
+import type { Props } from "./types";
 
 export default class MarkdownWidget extends Component<Props> {
   public override render(): ComponentChildren {

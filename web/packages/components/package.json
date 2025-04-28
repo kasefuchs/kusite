@@ -1,0 +1,46 @@
+{
+  "name": "@kusite/components",
+  "type": "module",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "./dist"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./index.css": {
+      "default": "./dist/index.css"
+    }
+  },
+  "scripts": {
+    "build": "rslib build"
+  },
+  "prettier": {
+    "printWidth": 120
+  },
+  "dependencies": {
+    "classnames": "^2.5.1",
+    "preact": "^10.26.5"
+  },
+  "devDependencies": {
+    "@microsoft/api-extractor": "^7.52.5",
+    "@rsbuild/plugin-preact": "^1.3.1",
+    "@rsbuild/plugin-sass": "^1.3.1",
+    "@rsbuild/plugin-typed-css-modules": "^1.0.2",
+    "@rslib/core": "^0.6.7",
+    "@tsconfig/strictest": "^2.0.5",
+    "typescript": "^5.8.3"
+  }
+}

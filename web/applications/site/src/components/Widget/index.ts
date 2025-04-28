@@ -1,3 +1,2 @@
-export type { Props as WidgetProps } from "#components/Widget/types";
-export { default } from "#components/Widget/Widget";
-
+export type { Props as WidgetProps } from "./types";
+export { default } from "./Widget";
