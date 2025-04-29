@@ -1,6 +1,6 @@
 import type { ComponentChildren } from "preact";
 
 export interface Props {
-  title: ComponentChildren;
+  title: string;
   children?: ComponentChildren;
 }

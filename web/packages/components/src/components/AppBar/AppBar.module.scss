@@ -1,0 +1,6 @@
+@use "~#styles/variables" as *;
+@use "~#styles/mixins" as *;
+
+.app-bar {
+  @include flexbox(row, flex-start, center, 0);
+}

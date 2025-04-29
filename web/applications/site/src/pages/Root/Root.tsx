@@ -1,16 +1,15 @@
-import HeaderIconButton from "#components/HeaderIconButton";
 import NavigationLink from "#components/NavigationLink";
 import RootStoreContext from "#contexts/RootStoreContext";
 import Blog from "#pages/Blog";
 import Home from "#pages/Home";
-import * as styles from "#pages/Root/Root.module.scss";
-import type { Props } from "#pages/Root/types";
-import { Container } from "@kusite/components";
+import { AppBar, IconButton, Toolbar, Typography } from "@kusite/components";
 import { RiEarthLine } from "@remixicon/react";
 import { observer } from "mobx-react";
 import { Component, type ComponentChild, type ContextType } from "preact";
 import { withTranslation } from "react-i18next";
 import { Route, Switch } from "wouter";
+import * as styles from "./Root.module.scss";
+import type { Props } from "./types";
 
 @observer
 class Root extends Component<Props> {
@@ -23,29 +22,31 @@ class Root extends Component<Props> {
     const { t } = this.props;
 
     return (
-      <main className={styles.root}>
-        <Container className={styles.header}>
+      <div className={styles.root}>
+        <AppBar element="header" className={styles.header}>
           <img className={styles.headerLogo} src={"https://avatars.githubusercontent.com/u/64592097"} />
-          <div className={styles.headerContent}>
-            <nav className={styles.navigationRail}>
+          <Toolbar className={styles.headerContent}>
+            <Toolbar element="nav" className={styles.navigationRail}>
               <NavigationLink to={"/"} children={t("header.navigation.home")} />
               <NavigationLink to={"/blog"} children={t("header.navigation.blog")} />
-            </nav>
-            <div className={styles.actionRail}>
-              <HeaderIconButton onClick={() => this.context.i18n.nextLanguage()} children={<RiEarthLine size={24} />} />
-            </div>
-          </div>
-        </Container>
-        <div className={styles.content}>
+            </Toolbar>
+            <Toolbar element="fieldset" className={styles.actionRail}>
+              <IconButton onClick={() => this.context.i18n.nextLanguage()}>
+                <RiEarthLine size={24} />
+              </IconButton>
+            </Toolbar>
+          </Toolbar>
+        </AppBar>
+        <main className={styles.content}>
           <Switch>
             <Route path={"/"} children={<Home />} />
             <Route path={"/blog"} children={<Blog />} />
           </Switch>
-        </div>
-        <Container className={styles.footer}>
-          <span children={t("footer.copyright", { year: Root.copyrightYear })} />
-        </Container>
-      </main>
+        </main>
+        <AppBar element="footer" className={styles.footer}>
+          <Typography element="span" children={t("footer.copyright", { year: Root.copyrightYear })} />
+        </AppBar>
+      </div>
     );
   }
 }
