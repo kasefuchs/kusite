@@ -13,9 +13,16 @@ home:
     welcome:
       title: Welcome
       content: |
-        ## Lorem ipsum dolor sit amet
+        # h1
+        ## h2
+        ### h3
+        #### h4
+        ##### h5
+        ###### h6
 
         Otters so cute!
+
+        end p
 
 blog:
   articles:

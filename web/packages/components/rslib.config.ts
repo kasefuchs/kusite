@@ -20,5 +20,8 @@ export default defineConfig((): RslibConfig => {
         "#styles": "./src/styles",
       },
     },
+    source: {
+      entry: { index: "./src/index.ts" },
+    },
   };
 });

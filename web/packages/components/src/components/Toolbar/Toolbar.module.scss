@@ -1,0 +1,9 @@
+@use "~#styles/variables" as *;
+@use "~#styles/mixins" as *;
+
+.toolbar {
+  @include flexbox(row, flex-start, center, 0);
+
+  border: none;
+  padding: 0;
+}

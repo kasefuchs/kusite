@@ -9,34 +9,36 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 15px;
-  gap: 20px;
+  gap: 25px;
 }
 
 .header,
 .footer {
-  @include flexbox(row, center, center, 0);
-
   height: 45px;
 }
 
-.content,
-.header-content,
-.navigation-rail {
-  @include flexbox(row, flex-start, stretch, 1);
+.footer {
+  justify-content: center;
 }
 
-.action-rail {
-  @include flexbox(row, flex-start, center, 0);
+.content {
+  flex-grow: 1;
+}
+
+.navigation-rail {
+  flex-grow: 1;
+  align-items: stretch;
 }
 
 .action-rail,
 .header-content,
 .navigation-rail {
-  gap: 35px;
+  gap: 25px;
   height: 100%;
 }
 
 .header-content {
+  flex-grow: 1;
   padding: 0 25px;
 }
 

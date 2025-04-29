@@ -1,24 +1,28 @@
 @use "~#styles/mixins" as *;
 
-.root,
+.root {
+  @include flexbox(row, flex-start, stretch, 1);
+  gap: 20px;
+
+  @media (max-width: 750px) {
+    flex-direction: column;
+  }
+}
+
 .primary,
 .secondary {
-  @include flexbox(row, flex-start, stretch, 1);
-
-  gap: 20px;
+  @include flexbox(column, flex-start, stretch);
 }
 
 .primary {
-  @include flexbox(column, flex-start, stretch, 1);
+  flex-grow: 1;
 }
 
 .secondary {
-  @include flexbox(column, flex-start, stretch, 0);
-
   width: 300px;
   flex-shrink: 0;
 
   @media (max-width: 750px) {
-    display: none;
+    width: 100%;
   }
 }

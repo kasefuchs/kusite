@@ -22,13 +22,7 @@
       "react-dom/*": ["./node_modules/preact/compat/*"],
       "#assets/*": ["./src/assets/*"],
       "#components/*": ["./src/components/*"],
-      "#contexts/*": ["./src/contexts/*"],
-      "#types/*": ["./src/types/*"],
-      "#pages/*": ["./src/pages/*"],
-      "#providers/*": ["./src/providers/*"],
-      "#stores/*": ["./src/stores/*"],
-      "#styles/*": ["./src/styles/*"],
-      "#utilities/*": ["./src/utilities/*"]
+      "#styles/*": ["./src/styles/*"]
     }
   }
 }

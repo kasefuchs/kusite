@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import { Component, type ComponentChildren } from "preact";
 import { Link } from "wouter";
 import * as styles from "./NavigationLink.module.scss";
@@ -6,7 +6,7 @@ import type { Props } from "./types";
 
 export default class NavigationLink extends Component<Props> {
   private static getClassNames(isActive: boolean): string {
-    return classNames(styles.link, isActive ? styles.active : undefined);
+    return clsx(styles.link, isActive ? styles.active : undefined);
   }
 
   public override render(): ComponentChildren {

@@ -24,7 +24,7 @@
     "@fontsource/jetbrains-mono": "^5.2.5",
     "@kusite/components": "workspace:^",
     "@remixicon/react": "^4.6.0",
-    "classnames": "^2.5.1",
+    "clsx": "^2.1.1",
     "i18next": "^24.2.3",
     "json-stringify-deterministic": "^1.0.12",
     "markdown-to-jsx": "^7.7.6",
