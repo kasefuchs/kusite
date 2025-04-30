@@ -1,11 +1,9 @@
-@use "~#styles/variables" as *;
+@use "@kusite/styles" as *;
 
 .link {
   color: $color-text;
 
-  list-style: none;
   align-content: center;
-
   border-bottom: 2px solid transparent;
   text-decoration: none;
 

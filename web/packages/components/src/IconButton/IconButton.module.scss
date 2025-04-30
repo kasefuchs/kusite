@@ -1,5 +1,4 @@
-@use "~#styles/variables" as *;
-@use "~#styles/mixins" as *;
+@use "@kusite/styles" as *;
 
 .icon-button {
   @include flexbox(column, center, center, 0);

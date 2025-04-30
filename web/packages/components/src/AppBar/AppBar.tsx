@@ -1,6 +1,6 @@
-import Container from "#components/Container";
 import clsx from "clsx";
 import type { ComponentChild } from "preact";
+import Container from "../Container";
 import * as styles from "./AppBar.module.scss";
 import type { Props } from "./types";
 

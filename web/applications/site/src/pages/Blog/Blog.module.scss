@@ -1,4 +1,4 @@
-@use "~#styles/mixins" as *;
+@use "@kusite/styles" as *;
 
 .root {
   @include flexbox(column, flex-start, stretch, 1);
