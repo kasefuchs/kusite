@@ -1,5 +1,4 @@
-@use "~#styles/variables" as *;
-@use "~#styles/mixins" as *;
+@use "@kusite/styles" as *;
 
 .toolbar {
   @include flexbox(row, flex-start, center, 0);

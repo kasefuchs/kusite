@@ -31,6 +31,7 @@
     "printWidth": 120
   },
   "dependencies": {
+    "@kusite/styles": "workspace:^",
     "clsx": "^2.1.1",
     "preact": "^10.26.5"
   },
@@ -39,7 +40,7 @@
     "@rsbuild/plugin-preact": "^1.3.1",
     "@rsbuild/plugin-sass": "^1.3.1",
     "@rsbuild/plugin-typed-css-modules": "^1.0.2",
-    "@rslib/core": "^0.6.7",
+    "@rslib/core": "^0.6.8",
     "@tsconfig/strictest": "^2.0.5",
     "typescript": "^5.8.3"
   }
