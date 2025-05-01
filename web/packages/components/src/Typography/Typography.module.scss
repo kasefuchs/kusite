@@ -5,48 +5,62 @@
   margin: 0;
   word-break: break-word;
 
-  h1 {
+  &.h1 {
     font-size: 2.5rem;
-    font-weight: 600;
+    font-weight: 300;
   }
 
-  h2 {
+  &.h2 {
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 300;
   }
 
-  h3 {
+  &.h3 {
     font-size: 1.75rem;
-    font-weight: 500;
-  }
-
-  h4 {
-    font-size: 1.5rem;
-    font-weight: 500;
-  }
-
-  h5 {
-    font-size: 1.25rem;
-    font-weight: 500;
-  }
-
-  h6 {
-    font-size: 1rem;
     font-weight: 400;
   }
 
-  p {
+  &.h4 {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  &.h5 {
+    font-size: 1.25rem;
+    font-weight: 400;
+  }
+
+  &.h6 {
     font-size: 1rem;
+    font-weight: 500;
+  }
+
+  &.body1 {
+    font-size: 1rem;
+    font-weight: 400;
     line-height: 1.5;
   }
 
-  span {
+  &.body2 {
     font-size: 0.875rem;
+    font-weight: 400;
     line-height: 1.45;
   }
 
-  &.paragraph {
-    margin-bottom: 1rem;
+  &.subtitle1 {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  &.subtitle2 {
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.45;
+  }
+
+  &.margin-bottom {
+    margin-bottom: 0.35em;
 
     &:last-child {
       margin-bottom: 0;

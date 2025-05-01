@@ -1,11 +1,11 @@
-import { MarkdownWidget } from "#components/MarkdownWidget";
-import * as styles from "#pages/Home/Home.module.scss";
-import type { Props } from "#pages/Home/types";
-import { Component, type ComponentChild } from "preact";
+import MarkdownWidget from "#components/MarkdownWidget";
+import { Component, type ComponentChildren } from "preact";
 import { withTranslation } from "react-i18next";
+import * as styles from "./Home.module.scss";
+import type { Props } from "./types";
 
 class Home extends Component<Props> {
-  public override render(): ComponentChild {
+  public override render(): ComponentChildren {
     const { t } = this.props;
 
     return (

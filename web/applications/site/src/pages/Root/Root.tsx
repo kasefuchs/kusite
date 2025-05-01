@@ -5,7 +5,7 @@ import Home from "#pages/Home";
 import { AppBar, IconButton, Toolbar, Typography } from "@kusite/components";
 import { RiEarthLine } from "@remixicon/react";
 import { observer } from "mobx-react";
-import { Component, type ComponentChild, type ContextType } from "preact";
+import { Component, type ComponentChildren, type ContextType } from "preact";
 import { withTranslation } from "react-i18next";
 import { Route, Switch } from "wouter";
 import * as styles from "./Root.module.scss";
@@ -18,7 +18,7 @@ class Root extends Component<Props> {
   public static override readonly contextType = RootStoreContext;
   declare public readonly context: NonNullable<ContextType<typeof RootStoreContext>>;
 
-  public override render(): ComponentChild {
+  public override render(): ComponentChildren {
     const { t } = this.props;
 
     return (
@@ -44,7 +44,7 @@ class Root extends Component<Props> {
           </Switch>
         </main>
         <AppBar element="footer" className={styles.footer}>
-          <Typography element="span" children={t("footer.copyright", { year: Root.copyrightYear })} />
+          <Typography children={t("footer.copyright", { year: Root.copyrightYear })} />
         </AppBar>
       </div>
     );

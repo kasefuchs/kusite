@@ -14,6 +14,11 @@ export default defineConfig((): RslibConfig => {
       cssModules: { namedExport: true },
     },
     plugins: [pluginPreact(), pluginSass(), pluginTypedCSSModules()],
+    resolve: {
+      alias: {
+        "#": "./src",
+      },
+    },
     source: {
       entry: { index: "./src/index.ts" },
     },

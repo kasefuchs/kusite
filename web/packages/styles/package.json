@@ -8,7 +8,13 @@
   "files": [
     "./scss"
   ],
+  "scripts": {
+    "format": "prettier --write scss/"
+  },
   "prettier": {
     "printWidth": 120
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3"
   }
 }

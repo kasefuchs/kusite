@@ -4,6 +4,7 @@
     /* library */
     "jsx": "react-jsx",
     "lib": ["DOM", "ES2020"],
+    "types": ["@rsbuild/core/types"],
     "target": "ES2020",
     "noEmit": true,
     "jsxImportSource": "preact",
@@ -20,6 +21,7 @@
       "react/jsx-runtime": ["./node_modules/preact/jsx-runtime"],
       "react-dom": ["./node_modules/preact/compat/"],
       "react-dom/*": ["./node_modules/preact/compat/*"],
+      "#/*": ["./src/*"],
       "#assets/*": ["./src/assets/*"],
       "#components/*": ["./src/components/*"],
       "#contexts/*": ["./src/contexts/*"],
