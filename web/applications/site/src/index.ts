@@ -1,7 +1,8 @@
 import "#styles/index.scss";
 import "@kusite/components/index.css";
+
+import Application from "#/Application";
 import { createElement, render } from "preact";
-import { default as Application } from "./Application";
 
 const container = document.getElementById("root");
 

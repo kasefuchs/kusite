@@ -1,23 +1,22 @@
 @use "@kusite/styles" as *;
 
 .link {
-  color: $color-text;
+  color: $color-text !important;
 
   align-content: center;
   border-bottom: 2px solid transparent;
-  text-decoration: none;
 
   transition:
     color 300ms,
     border-bottom-color 300ms;
 
   &.active {
-    color: $color-text-highlight;
+    color: $color-text-highlight !important;
     border-bottom-color: $color-primary;
   }
 
   &:not(&.active):hover {
-    color: $color-text-highlight;
+    color: $color-text-highlight !important;
     border-bottom-color: $color-text;
   }
 }
