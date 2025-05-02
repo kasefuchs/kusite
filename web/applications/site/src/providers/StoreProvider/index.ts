@@ -1,2 +1,2 @@
-export { default } from "#providers/StoreProvider/StoreProvider";
-export type { Props as StoreProviderProps } from "#providers/StoreProvider/types";
+export { default } from "./StoreProvider";
+export type { Props as StoreProviderProps } from "./types";

@@ -1,7 +1,7 @@
-import type { Language, Namespace, Props, State } from "#providers/I18nProvider/types";
 import i18next, { type BackendModule, LanguageDetectorModule } from "i18next";
 import { Component, type ComponentChildren } from "preact";
 import { I18nextProvider, initReactI18next } from "react-i18next";
+import type { Language, Namespace, Props, State } from "./types";
 
 export default class I18nProvider extends Component<Props, State> {
   public static readonly namespaces = ["page"] as const;
@@ -56,6 +56,6 @@ export default class I18nProvider extends Component<Props, State> {
   }
 
   public override render(): ComponentChildren {
-    return this.state.initialized ? <I18nextProvider i18n={i18next} children={this.props.children} /> : undefined;
+    return this.state.initialized && <I18nextProvider i18n={i18next} children={this.props.children} />;
   }
 }

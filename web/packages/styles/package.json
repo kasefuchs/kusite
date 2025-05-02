@@ -9,7 +9,7 @@
     "./scss"
   ],
   "scripts": {
-    "format": "prettier --write scss/"
+    "format": "prettier --write ./"
   },
   "prettier": {
     "printWidth": 120

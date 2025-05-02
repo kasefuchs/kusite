@@ -6,8 +6,6 @@ import (
 
 	"github.com/hashicorp/hcl/v2/hclsimple"
 	"github.com/kasefuchs/kusite/internal/app"
-	"github.com/kasefuchs/kusite/internal/pkg/server"
-	"github.com/kasefuchs/kusite/internal/pkg/web"
 	"github.com/urfave/cli/v2"
 )
 
@@ -32,11 +30,7 @@ func main() {
 						return err
 					}
 
-					if err := web.NewController(cfg.Web).Use(server.App); err != nil {
-						return err
-					}
-
-					return server.Open(cfg.Server)
+					return app.NewApp(&cfg).Start()
 				},
 			},
 		},
