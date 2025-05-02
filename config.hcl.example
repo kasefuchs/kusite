@@ -3,7 +3,11 @@ server {
   port    = 8081
 }
 
-web {
-  enabled   = true
+static {
+  prefix    = "/"
   directory = "web/applications/site/dist"
+}
+
+database "sqlite" {
+  dsn = "kusite.db"
 }

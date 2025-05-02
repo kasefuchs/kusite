@@ -1,4 +1,4 @@
-package web
+package static
 
 import "io/fs"
 
@@ -12,5 +12,6 @@ func (f *fallbackFileSystem) Open(name string) (fs.File, error) {
 	if err != nil {
 		open, err = f.fileSystem.Open(f.fallbackPath)
 	}
+
 	return open, err
 }

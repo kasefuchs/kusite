@@ -31,7 +31,6 @@ export default defineConfig((config: ConfigParams): RsbuildConfig => {
         "#providers": "./src/providers",
         "#stores": "./src/stores",
         "#styles": "./src/styles",
-        "#utilities": "./src/utilities",
       },
     },
     source: {

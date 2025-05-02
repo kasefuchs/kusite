@@ -1,5 +1,5 @@
-import type { default as I18nProvider } from "#providers/I18nProvider/I18nProvider";
 import type { ComponentChildren } from "preact";
+import type I18nProvider from "./I18nProvider";
 
 export interface Props {
   children: ComponentChildren;
@@ -9,5 +9,6 @@ export interface State {
   initialized: boolean;
 }
 
-export type Language = (typeof I18nProvider)["supportedLanguages"][number];
-export type Namespace = (typeof I18nProvider)["namespaces"][number];
+export type ProviderType = typeof I18nProvider;
+export type Language = ProviderType["supportedLanguages"][number];
+export type Namespace = ProviderType["namespaces"][number];

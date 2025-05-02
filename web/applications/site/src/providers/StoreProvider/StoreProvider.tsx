@@ -1,7 +1,7 @@
 import RootStoreContext from "#contexts/RootStoreContext";
-import type { Props, State } from "#providers/StoreProvider/types";
 import RootStore from "#stores/RootStore";
 import { Component, type ComponentChildren } from "preact";
+import type { Props, State } from "./types";
 
 export default class StoreProvider extends Component<Props, State> {
   private readonly rootStore: RootStore = new RootStore();
@@ -18,8 +18,8 @@ export default class StoreProvider extends Component<Props, State> {
   }
 
   public override render(): ComponentChildren {
-    return this.state.initialized ? (
-      <RootStoreContext.Provider value={this.rootStore} children={this.props.children} />
-    ) : undefined;
+    return (
+      this.state.initialized && <RootStoreContext.Provider value={this.rootStore} children={this.props.children} />
+    );
   }
 }

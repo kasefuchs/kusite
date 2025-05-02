@@ -2,6 +2,7 @@
 
 .root {
   @include flexbox(row, flex-start, stretch, 1);
+
   gap: 20px;
 
   @media (max-width: 800px) {
