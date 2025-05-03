@@ -1,15 +1,14 @@
-import I18nProvider from "#providers/I18nProvider";
-import { Language } from "#providers/I18nProvider/types";
-import type { Data } from "#stores/I18nStore/types";
-import type IPersistentStore from "#types/stores/IPersistentStore";
+import I18nProvider, { type Language } from "#providers/I18nProvider";
+import type { IPersistentStore } from "@kusite/stores";
 import i18next from "i18next";
 import { action, observable } from "mobx";
+import type { Data } from "./types";
 
 export default class I18nStore implements IPersistentStore<Data> {
   private static readonly supportedLanguagesCount: number = I18nProvider.supportedLanguages.length;
 
   @observable
-  public accessor language: Language = i18next.language as Language;
+  public accessor language: Language = i18next.resolvedLanguage as Language;
 
   public get id(): string {
     return "i18n" as const;

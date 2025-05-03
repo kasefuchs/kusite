@@ -3,6 +3,7 @@ import { pluginPreact } from "@rsbuild/plugin-preact";
 import { pluginSass } from "@rsbuild/plugin-sass";
 import { pluginTypedCSSModules } from "@rsbuild/plugin-typed-css-modules";
 import { pluginYaml } from "@rsbuild/plugin-yaml";
+import packageManifest from "./package.json";
 
 export default defineConfig((config: ConfigParams): RsbuildConfig => {
   const isDevelopment = config.env == "development";
@@ -27,6 +28,7 @@ export default defineConfig((config: ConfigParams): RsbuildConfig => {
         "#": "./src",
         "#assets": "./src/assets",
         "#components": "./src/components",
+        "#contexts": "./src/contexts",
         "#pages": "./src/pages",
         "#providers": "./src/providers",
         "#stores": "./src/stores",
@@ -34,7 +36,10 @@ export default defineConfig((config: ConfigParams): RsbuildConfig => {
       },
     },
     source: {
-      define: publicVars,
+      define: {
+        "import.meta.env.PACKAGE_NAME": JSON.stringify(packageManifest.name),
+        ...publicVars,
+      },
       entry: { index: "./src/index.ts" },
       preEntry: isDevelopment ? ["preact/debug"] : [],
     },
