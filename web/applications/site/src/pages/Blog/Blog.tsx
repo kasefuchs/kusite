@@ -10,7 +10,7 @@ class Blog extends Component<Props> {
     const { t } = this.props;
 
     return (
-      <div className={styles.root}>
+      <div className={styles.blogRoot}>
         <Widget>
           <WidgetHeader
             title={t("articles.title")}

@@ -1,12 +1,12 @@
 @use "@kusite/styles" as *;
 
-.header {
+.widget-header {
   @include flexbox(row, flex-start, center, 1);
 
   padding: 0 5px;
 }
 
-.title {
+.widget-header-title {
   flex-grow: 1;
   text-transform: uppercase;
 }

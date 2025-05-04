@@ -1,6 +1,6 @@
 @use "@kusite/styles" as *;
 
-.root {
+.layout-root {
   @include flexbox(column, flex-start, stretch, 1);
 
   width: 100%;
@@ -11,37 +11,37 @@
   gap: 20px;
 }
 
-.header,
-.footer {
+.layout-header,
+.layout-footer {
   height: 45px;
 }
 
-.footer {
+.layout-footer {
   justify-content: center;
 }
 
-.content {
+.layout-content {
   flex-grow: 1;
 }
 
-.navigation-rail {
+.layout-navigation-rail {
   flex-grow: 1;
   align-items: stretch;
 }
 
-.action-rail,
-.header-content,
-.navigation-rail {
+.layout-action-rail,
+.layout-header-content,
+.layout-navigation-rail {
   gap: 25px;
   height: 100%;
 }
 
-.header-content {
+.layout-header-content {
   flex-grow: 1;
   padding: 0 25px;
 }
 
-.header-logo {
+.layout-header-logo {
   width: 45px;
   height: 45px;
   outline: $color-container-border solid $container-border-width;

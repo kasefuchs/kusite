@@ -1,4 +1,4 @@
-import I18nProvider, { type Language } from "#providers/I18nProvider";
+import I18nProvider, { type Language } from "#/providers/I18nProvider";
 import type { IPersistentStore } from "@kusite/stores";
 import i18next from "i18next";
 import { action, observable } from "mobx";

@@ -26,13 +26,6 @@ export default defineConfig((config: ConfigParams): RsbuildConfig => {
     resolve: {
       alias: {
         "#": "./src",
-        "#assets": "./src/assets",
-        "#components": "./src/components",
-        "#contexts": "./src/contexts",
-        "#pages": "./src/pages",
-        "#providers": "./src/providers",
-        "#stores": "./src/stores",
-        "#styles": "./src/styles",
       },
     },
     source: {
