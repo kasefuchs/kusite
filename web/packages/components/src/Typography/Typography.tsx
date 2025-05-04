@@ -15,7 +15,12 @@ export default function Typography({
 
   return (
     <Element
-      className={clsx(styles.typography, variantMapping[variant], marginBottom && styles.marginBottom, className)}
+      className={clsx(
+        styles.typography,
+        variantMapping[variant],
+        marginBottom && styles.typographyMarginBottom,
+        className,
+      )}
       {...rest}
     />
   );

@@ -1,4 +1,4 @@
-import MarkdownWidget from "#components/MarkdownWidget";
+import MarkdownWidget from "#/components/MarkdownWidget";
 import { Component, type ComponentChildren } from "preact";
 import { withTranslation } from "react-i18next";
 import * as styles from "./Home.module.scss";
@@ -9,11 +9,11 @@ class Home extends Component<Props> {
     const { t } = this.props;
 
     return (
-      <div className={styles.root}>
-        <div className={styles.primary}>
+      <div className={styles.homeRoot}>
+        <div className={styles.homePrimary}>
           <MarkdownWidget title={t("primary.welcome.title")} children={t("primary.welcome.content")} />
         </div>
-        <div className={styles.secondary}>
+        <div className={styles.homeSecondary}>
           <MarkdownWidget title="Test">Hello?</MarkdownWidget>
         </div>
       </div>

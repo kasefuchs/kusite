@@ -1,4 +1,4 @@
-import "#styles/index.scss";
+import "#/styles/index.scss";
 import "@kusite/components/index.css";
 
 import Application from "#/Application";

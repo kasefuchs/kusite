@@ -1,6 +1,6 @@
 @use "@kusite/styles" as *;
 
-.root {
+.home-root {
   @include flexbox(row, flex-start, stretch, 1);
 
   gap: 20px;
@@ -10,16 +10,16 @@
   }
 }
 
-.primary,
-.secondary {
+.home-primary,
+.home-secondary {
   @include flexbox(column, flex-start, stretch);
 }
 
-.primary {
+.home-primary {
   flex-grow: 1;
 }
 
-.secondary {
+.home-secondary {
   width: 300px;
   flex-shrink: 0;
 

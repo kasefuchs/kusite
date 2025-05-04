@@ -1,5 +1,6 @@
 {
   "extends": ["@tsconfig/strictest/tsconfig.json"],
+  "include": ["./src/"],
   "compilerOptions": {
     /* library */
     "jsx": "react-jsx",
@@ -21,14 +22,7 @@
       "react/jsx-runtime": ["./node_modules/preact/jsx-runtime"],
       "react-dom": ["./node_modules/preact/compat/"],
       "react-dom/*": ["./node_modules/preact/compat/*"],
-      "#/*": ["./src/*"],
-      "#assets/*": ["./src/assets/*"],
-      "#components/*": ["./src/components/*"],
-      "#contexts/*": ["./src/contexts/*"],
-      "#pages/*": ["./src/pages/*"],
-      "#providers/*": ["./src/providers/*"],
-      "#stores/*": ["./src/stores/*"],
-      "#styles/*": ["./src/styles/*"]
+      "#/*": ["./src/*"]
     }
   }
 }

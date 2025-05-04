@@ -1,4 +1,4 @@
-import i18next, { type BackendModule, LanguageDetectorModule } from "i18next";
+import i18next, { type BackendModule, type LanguageDetectorModule } from "i18next";
 import { Component, type ComponentChildren } from "preact";
 import { I18nextProvider, initReactI18next } from "react-i18next";
 import type { Language, Namespace, Props, State } from "./types";
@@ -14,7 +14,7 @@ export default class I18nProvider extends Component<Props, State> {
       // Do nothing.
     },
     read: async (language: Language, namespace: Namespace) => {
-      const module = await import(`#assets/locales/${language}/${namespace}.yml`);
+      const module = await import(`#/assets/locales/${language}/${namespace}.yml`);
       return module.default;
     },
   };

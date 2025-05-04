@@ -13,7 +13,7 @@ export default function NavigationLink({ children, ...rest }: Props) {
         underline="never"
         variant={isActive ? "subtitle1" : "body1"}
         children={children}
-        className={clsx(styles.link, isActive && styles.active)}
+        className={clsx(styles.navigationLink, isActive && styles.navigationLinkActive)}
       />
     </WouterLink>
   );

@@ -1,5 +1,5 @@
-import I18nStore from "#stores/I18nStore";
-import { PersistentRootStore } from "@kusite/stores";
+import I18nStore from "#/stores/I18nStore";
+import PersistentRootStore from "@kusite/stores";
 import { observable } from "mobx";
 
 export default class RootStore extends PersistentRootStore {

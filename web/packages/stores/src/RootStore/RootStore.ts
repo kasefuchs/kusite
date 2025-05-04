@@ -3,7 +3,7 @@ import stringify from "json-stringify-deterministic";
 import localForage from "localforage";
 import { reaction, type IReactionDisposer } from "mobx";
 
-export default abstract class PersistentRootStore implements IStore {
+export default abstract class RootStore implements IStore {
   protected abstract persistentStores: IPersistentStore[];
 
   protected constructor(
@@ -16,7 +16,7 @@ export default abstract class PersistentRootStore implements IStore {
       reaction(
         () => stringify(store.dump()),
         async (serialized) => this.storage.setItem(store.id, JSON.parse(serialized)),
-        { name: `PersistentRootStorePersistenceReaction(${this.id}:${store.id})` },
+        { name: `RootStorePersistenceReaction(${this.id}:${store.id})` },
       ),
     );
   }
@@ -24,7 +24,7 @@ export default abstract class PersistentRootStore implements IStore {
   public async restoreFromStorage(): Promise<void> {
     for (const store of this.persistentStores) {
       const data = await this.storage.getItem(store.id);
-      if (!!data) await store.restore(data);
+      if (data) await store.restore(data);
     }
   }
 }

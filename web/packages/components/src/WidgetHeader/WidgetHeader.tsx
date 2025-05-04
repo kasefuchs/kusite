@@ -13,8 +13,8 @@ export default function WidgetHeader({
   ...rest
 }: Props): ComponentChildren {
   return (
-    <Element className={clsx(styles.header, className)} {...rest}>
-      <Typography variant="subtitle1" className={styles.title} children={title} />
+    <Element className={clsx(styles.widgetHeader, className)} {...rest}>
+      <Typography variant="subtitle1" className={styles.widgetHeaderTitle} children={title} />
       <Toolbar children={action} />
     </Element>
   );

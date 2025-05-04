@@ -3,16 +3,16 @@ import * as styles from "./Typography.module.scss";
 import type { Variant } from "./types";
 
 export const variantMapping: Record<Variant, string> = {
-  h1: styles.h1,
-  h2: styles.h2,
-  h3: styles.h3,
-  h4: styles.h4,
-  h5: styles.h5,
-  h6: styles.h6,
-  body1: styles.body1,
-  body2: styles.body2,
-  subtitle1: styles.subtitle1,
-  subtitle2: styles.subtitle2,
+  h1: styles.typographyH1,
+  h2: styles.typographyH2,
+  h3: styles.typographyH3,
+  h4: styles.typographyH4,
+  h5: styles.typographyH5,
+  h6: styles.typographyH6,
+  body1: styles.typographyBody1,
+  body2: styles.typographyBody2,
+  subtitle1: styles.typographySubtitle1,
+  subtitle2: styles.typographySubtitle2,
 };
 
 export const elementMapping: Record<Variant, JSX.ElementType> = {

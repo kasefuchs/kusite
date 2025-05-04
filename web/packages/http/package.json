@@ -1,5 +1,5 @@
 {
-  "name": "@kusite/stores",
+  "name": "@kusite/http",
   "type": "module",
   "version": "1.0.0",
   "license": "Apache-2.0",
@@ -29,11 +29,6 @@
   "prettier": {
     "printWidth": 120
   },
-  "dependencies": {
-    "json-stringify-deterministic": "^1.0.12",
-    "localforage": "^1.10.0",
-    "mobx": "^6.13.7"
-  },
   "devDependencies": {
     "@eslint/js": "^9.26.0",
     "@microsoft/api-extractor": "^7.52.7",
@@ -41,7 +36,6 @@
     "@tsconfig/strictest": "^2.0.5",
     "eslint": "^9.26.0",
     "prettier": "^3.5.3",
-    "ts-essentials": "^10.0.4",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.31.1"
   }
