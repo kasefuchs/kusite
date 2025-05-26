@@ -1,2 +1,2 @@
-export type { Props as WidgetContentProps } from "./types";
-export { default } from "./WidgetContent";
+export type { Props as WidgetContentProps } from './types'
+export { default } from './WidgetContent'

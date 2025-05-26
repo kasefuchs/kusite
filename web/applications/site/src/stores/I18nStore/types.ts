@@ -1,5 +1,5 @@
-import type { Language } from "#/providers/I18nProvider";
+import type { Language } from '#/providers/I18nProvider'
 
 export interface Data {
-  language: Language;
+  language: Language
 }

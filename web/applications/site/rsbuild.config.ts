@@ -1,18 +1,18 @@
-import { type ConfigParams, defineConfig, loadEnv, type RsbuildConfig } from "@rsbuild/core";
-import { pluginPreact } from "@rsbuild/plugin-preact";
-import { pluginSass } from "@rsbuild/plugin-sass";
-import { pluginTypedCSSModules } from "@rsbuild/plugin-typed-css-modules";
-import { pluginYaml } from "@rsbuild/plugin-yaml";
-import packageManifest from "./package.json";
+import { type ConfigParams, defineConfig, loadEnv, type RsbuildConfig } from '@rsbuild/core'
+import { pluginPreact } from '@rsbuild/plugin-preact'
+import { pluginSass } from '@rsbuild/plugin-sass'
+import { pluginTypedCSSModules } from '@rsbuild/plugin-typed-css-modules'
+import { pluginYaml } from '@rsbuild/plugin-yaml'
+import packageManifest from './package.json'
 
 export default defineConfig((config: ConfigParams): RsbuildConfig => {
-  const isDevelopment = config.env == "development";
-  const { publicVars } = loadEnv({ prefixes: ["KUSITE_"] });
+  const isDevelopment = config.env == 'development'
+  const { publicVars } = loadEnv({ prefixes: ['KUSITE_'] })
 
   return {
-    html: { title: "Kusite" },
+    html: { title: 'Kusite' },
     output: {
-      target: "web",
+      target: 'web',
       cssModules: { namedExport: true },
     },
     plugins: [
@@ -25,16 +25,16 @@ export default defineConfig((config: ConfigParams): RsbuildConfig => {
     ],
     resolve: {
       alias: {
-        "#": "./src",
+        '#': './src',
       },
     },
     source: {
       define: {
-        "import.meta.env.PACKAGE_NAME": JSON.stringify(packageManifest.name),
+        'import.meta.env.PACKAGE_NAME': JSON.stringify(packageManifest.name),
         ...publicVars,
       },
-      entry: { index: "./src/index.ts" },
-      preEntry: isDevelopment ? ["preact/debug"] : [],
+      entry: { index: './src/index.ts' },
+      preEntry: isDevelopment ? ['preact/debug'] : [],
     },
-  };
-});
+  }
+})

@@ -1,1 +1,1 @@
-export { default } from "./RootStore";
+export { default } from './RootStore'

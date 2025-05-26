@@ -1,12 +1,12 @@
-import Toolbar from "#/Toolbar";
-import Typography from "#/Typography";
-import clsx from "clsx";
-import type { ComponentChildren } from "preact";
-import type { Props } from "./types";
-import * as styles from "./WidgetHeader.module.scss";
+import Toolbar from '#/Toolbar'
+import Typography from '#/Typography'
+import clsx from 'clsx'
+import type { ComponentChildren } from 'preact'
+import type { Props } from './types'
+import * as styles from './WidgetHeader.module.scss'
 
 export default function WidgetHeader({
-  element: Element = "div",
+  element: Element = 'div',
   className,
   title,
   action,
@@ -17,5 +17,5 @@ export default function WidgetHeader({
       <Typography variant="subtitle1" className={styles.widgetHeaderTitle} children={title} />
       <Toolbar children={action} />
     </Element>
-  );
+  )
 }

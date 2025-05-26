@@ -1,3 +1,3 @@
-import type { ContainerProps } from "#/Container";
+import type { ContainerProps } from '#/Container'
 
-export type Props = ContainerProps;
+export type Props = ContainerProps

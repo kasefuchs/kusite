@@ -5,15 +5,7 @@
   "license": "Apache-2.0",
   "private": true,
   "main": "./scss/index.scss",
-  "files": [
-    "./scss"
-  ],
-  "scripts": {
-    "format": "prettier --write ./"
-  },
-  "prettier": {
-    "printWidth": 120
-  },
+  "files": ["./scss"],
   "devDependencies": {
     "prettier": "^3.5.3"
   }

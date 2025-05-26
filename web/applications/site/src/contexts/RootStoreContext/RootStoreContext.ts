@@ -1,6 +1,6 @@
-import { createContext } from "preact";
-import type { Value } from "./types";
+import { createContext } from 'preact'
+import type { Value } from './types'
 
-const RootStoreContext = createContext<Value>(null);
+const RootStoreContext = createContext<Value>(null)
 
-export default RootStoreContext;
+export default RootStoreContext
