@@ -1,2 +1,2 @@
-export { default } from "./RootStore";
-export * from "./types";
+export { default } from './RootStore'
+export * from './types'

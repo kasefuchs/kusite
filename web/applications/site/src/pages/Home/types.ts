@@ -1,3 +1,3 @@
-import type { WithTranslation } from "react-i18next";
+import type { WithTranslation } from 'react-i18next'
 
-export type Props = WithTranslation;
+export type Props = WithTranslation

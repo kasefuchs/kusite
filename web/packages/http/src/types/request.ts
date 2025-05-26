@@ -1,17 +1,17 @@
-import type { BodyType, Method } from "#/HTTP";
+import type { BodyType, Method } from '#/HTTP'
 
-export type Route = `/${string}`;
+export type Route = `/${string}`
 
-export type RequestBody = BodyInit | object;
+export type RequestBody = BodyInit | object
 
 export interface RequestOptions {
-  body?: RequestBody;
-  params?: URLSearchParams;
-  headers?: Record<string, string>;
-  bodyType?: BodyType;
+  body?: RequestBody
+  params?: URLSearchParams
+  headers?: Record<string, string>
+  bodyType?: BodyType
 }
 
 export interface InternalRequestOptions extends RequestOptions {
-  route: Route;
-  method: Method;
+  route: Route
+  method: Method
 }

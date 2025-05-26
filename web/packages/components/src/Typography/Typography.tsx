@@ -1,17 +1,17 @@
-import clsx from "clsx";
-import type { ComponentChildren } from "preact";
-import * as styles from "./Typography.module.scss";
-import { elementMapping, variantMapping } from "./consts";
-import type { Props } from "./types";
+import clsx from 'clsx'
+import type { ComponentChildren } from 'preact'
+import * as styles from './Typography.module.scss'
+import { elementMapping, variantMapping } from './consts'
+import type { Props } from './types'
 
 export default function Typography({
   element,
-  variant = "body1",
+  variant = 'body1',
   marginBottom = false,
   className,
   ...rest
 }: Props): ComponentChildren {
-  const Element = element ?? elementMapping[variant];
+  const Element = element ?? elementMapping[variant]
 
   return (
     <Element
@@ -23,5 +23,5 @@ export default function Typography({
       )}
       {...rest}
     />
-  );
+  )
 }

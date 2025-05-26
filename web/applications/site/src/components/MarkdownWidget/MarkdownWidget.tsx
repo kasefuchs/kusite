@@ -1,6 +1,6 @@
-import { Markdown, Widget, WidgetContent, WidgetHeader } from "@kusite/components";
-import { Component, type ComponentChildren } from "preact";
-import type { Props } from "./types";
+import { Markdown, Widget, WidgetContent, WidgetHeader } from '@kusite/components'
+import { Component, type ComponentChildren } from 'preact'
+import type { Props } from './types'
 
 export default class MarkdownWidget extends Component<Props> {
   public override render(): ComponentChildren {
@@ -11,6 +11,6 @@ export default class MarkdownWidget extends Component<Props> {
           <Markdown children={this.props.children} />
         </WidgetContent>
       </Widget>
-    );
+    )
   }
 }

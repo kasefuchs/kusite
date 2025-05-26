@@ -1,5 +1,5 @@
-import type { ComponentChildren } from "preact";
+import type { ComponentChildren } from 'preact'
 
 export interface Props {
-  children: ComponentChildren;
+  children: ComponentChildren
 }

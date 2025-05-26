@@ -1,30 +1,30 @@
-import type { InternalRequestOptions, RequestBody, RequestOptions, ResponseLike, Route } from "#/types";
-import { BodyType, DefaultOptions, Method } from "./consts";
-import type { Options } from "./types";
+import type { InternalRequestOptions, RequestBody, RequestOptions, ResponseLike, Route } from '#/types'
+import { BodyType, DefaultOptions, Method } from './consts'
+import type { Options } from './types'
 
 export default class HTTP {
-  public readonly options: Options;
+  public readonly options: Options
 
   public constructor(options?: Partial<Options>) {
-    this.options = { ...DefaultOptions, ...options } as Options;
+    this.options = { ...DefaultOptions, ...options } as Options
   }
 
   private static parseResponse(response: ResponseLike): Promise<unknown> {
-    if (response.headers.get("Content-Type")?.startsWith("application/json")) {
-      return response.json();
+    if (response.headers.get('Content-Type')?.startsWith('application/json')) {
+      return response.json()
     }
 
-    return response.arrayBuffer();
+    return response.arrayBuffer()
   }
 
   private static createBodyInit(body: RequestBody, type?: BodyType): BodyInit {
     switch (type) {
       case BodyType.init:
-        return body as BodyInit;
+        return body as BodyInit
 
       case BodyType.json:
       default:
-        return JSON.stringify(body);
+        return JSON.stringify(body)
     }
   }
 
@@ -33,7 +33,7 @@ export default class HTTP {
       method: Method.Get,
       route,
       ...options,
-    });
+    })
   }
 
   public async put<R>(route: Route, options?: RequestOptions): Promise<R> {
@@ -41,7 +41,7 @@ export default class HTTP {
       method: Method.Put,
       route,
       ...options,
-    });
+    })
   }
 
   public async post<R>(route: Route, options?: RequestOptions): Promise<R> {
@@ -49,7 +49,7 @@ export default class HTTP {
       method: Method.Post,
       route,
       ...options,
-    });
+    })
   }
 
   public async patch<R>(route: Route, options?: RequestOptions): Promise<R> {
@@ -57,7 +57,7 @@ export default class HTTP {
       method: Method.Patch,
       route,
       ...options,
-    });
+    })
   }
 
   public async delete<R>(route: Route, options?: RequestOptions): Promise<R> {
@@ -65,23 +65,23 @@ export default class HTTP {
       method: Method.Delete,
       route,
       ...options,
-    });
+    })
   }
 
   public async request<R>(options: InternalRequestOptions): Promise<R> {
-    const { headers = {}, method, params, route, body, bodyType } = options;
+    const { headers = {}, method, params, route, body, bodyType } = options
 
-    const url = new URL(`${this.options.baseURL}${route}`);
-    if (params) url.search = params.toString();
+    const url = new URL(`${this.options.baseURL}${route}`)
+    if (params) url.search = params.toString()
 
-    const bodyInit = body ? HTTP.createBodyInit(body, bodyType) : null;
+    const bodyInit = body ? HTTP.createBodyInit(body, bodyType) : null
 
     const response = await this.options.request(url, {
       body: method == Method.Get ? null : bodyInit,
       headers,
       method,
-    });
+    })
 
-    return (await HTTP.parseResponse(response)) as R;
+    return (await HTTP.parseResponse(response)) as R
   }
 }

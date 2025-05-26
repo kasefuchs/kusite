@@ -1,6 +1,6 @@
-import type { JSX } from "preact/jsx-runtime";
-import * as styles from "./Typography.module.scss";
-import type { Variant } from "./types";
+import type { JSX } from 'preact/jsx-runtime'
+import * as styles from './Typography.module.scss'
+import type { Variant } from './types'
 
 export const variantMapping: Record<Variant, string> = {
   h1: styles.typographyH1,
@@ -13,17 +13,17 @@ export const variantMapping: Record<Variant, string> = {
   body2: styles.typographyBody2,
   subtitle1: styles.typographySubtitle1,
   subtitle2: styles.typographySubtitle2,
-};
+}
 
 export const elementMapping: Record<Variant, JSX.ElementType> = {
-  h1: "h1",
-  h2: "h2",
-  h3: "h3",
-  h4: "h4",
-  h5: "h5",
-  h6: "h6",
-  body1: "p",
-  body2: "p",
-  subtitle1: "h6",
-  subtitle2: "h6",
-};
+  h1: 'h1',
+  h2: 'h2',
+  h3: 'h3',
+  h4: 'h4',
+  h5: 'h5',
+  h6: 'h6',
+  body1: 'p',
+  body2: 'p',
+  subtitle1: 'h6',
+  subtitle2: 'h6',
+}

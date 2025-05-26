@@ -1,2 +1,2 @@
-export { default } from "./AppBar";
-export type { Props as AppBarProps } from "./types";
+export { default } from './AppBar'
+export type { Props as AppBarProps } from './types'

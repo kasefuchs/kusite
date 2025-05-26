@@ -1,11 +1,11 @@
-import type { Options } from "./types";
+import type { Options } from './types'
 
 export enum Method {
-  Get = "GET",
-  Put = "PUT",
-  Post = "POST",
-  Patch = "PATCH",
-  Delete = "DELETE",
+  Get = 'GET',
+  Put = 'PUT',
+  Post = 'POST',
+  Patch = 'PATCH',
+  Delete = 'DELETE',
 }
 
 export enum BodyType {
@@ -14,6 +14,6 @@ export enum BodyType {
 }
 
 export const DefaultOptions = {
-  baseURL: "/api",
+  baseURL: '/api',
   request: (url, init) => fetch(url, init),
-} satisfies Options;
+} satisfies Options
