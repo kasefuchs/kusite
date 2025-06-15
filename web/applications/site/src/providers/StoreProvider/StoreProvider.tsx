@@ -1,5 +1,5 @@
-import RootStoreContext from '#/contexts/RootStoreContext'
-import RootStore from '#/stores/RootStore'
+import RootStoreContext from '@/contexts/RootStoreContext'
+import RootStore from '@/stores/RootStore'
 import { Component, type ComponentChildren } from 'preact'
 import type { Props, State } from './types'
 

@@ -25,13 +25,13 @@
     "format": "biome format --write"
   },
   "dependencies": {
+    "@swc/helpers": "^0.5.17",
     "json-stringify-deterministic": "^1.0.12",
     "localforage": "^1.10.0",
     "mobx": "^6.13.7"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@microsoft/api-extractor": "^7.52.7",
     "@rslib/core": "^0.6.8",
     "@tsconfig/strictest": "^2.0.5",
     "prettier": "^3.5.3",

@@ -1,26 +1,31 @@
 import { pluginPreact } from '@rsbuild/plugin-preact'
 import { pluginSass } from '@rsbuild/plugin-sass'
 import { pluginTypedCSSModules } from '@rsbuild/plugin-typed-css-modules'
-import { defineConfig, type Dts, type Format, type LibConfig, type RslibConfig } from '@rslib/core'
+import { defineConfig, type Format, type LibConfig, type RslibConfig } from '@rslib/core'
 
-export default defineConfig((): RslibConfig => {
-  const dts: Dts = { bundle: true, autoExtension: true }
-  const formats: Format[] = ['esm', 'cjs']
+const formats: Format[] = ['esm', 'cjs']
+const libConfig: Partial<LibConfig> = {
+  dts: true,
+  syntax: 'es2020',
+  externalHelpers: true,
+}
 
-  return {
-    lib: formats.map((format): LibConfig => ({ dts, format, syntax: 'es2020' })),
+export default defineConfig(
+  (): RslibConfig => ({
+    lib: formats.map(
+      (format, index): LibConfig => ({
+        ...libConfig,
+        format,
+        dts: libConfig?.dts && !index,
+      }),
+    ),
+    plugins: [pluginPreact(), pluginSass(), pluginTypedCSSModules()],
     output: {
       target: 'web',
       cssModules: { namedExport: true },
     },
-    plugins: [pluginPreact(), pluginSass(), pluginTypedCSSModules()],
     resolve: {
-      alias: {
-        '#': './src',
-      },
+      alias: { '@': './src' },
     },
-    source: {
-      entry: { index: './src/index.ts' },
-    },
-  }
-})
+  }),
+)

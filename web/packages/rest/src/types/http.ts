@@ -1,4 +1,4 @@
-import type { BodyType, Method } from '#/HTTP'
+import type { BodyType, Method } from '@/constants'
 
 export type Route = `/${string}`
 
@@ -14,4 +14,9 @@ export interface RequestOptions {
 export interface InternalRequestOptions extends RequestOptions {
   route: Route
   method: Method
+}
+
+export interface ResponseLike
+  extends Pick<Response, 'arrayBuffer' | 'bodyUsed' | 'headers' | 'json' | 'ok' | 'status' | 'statusText' | 'text'> {
+  body: ReadableStream<Uint8Array> | null
 }

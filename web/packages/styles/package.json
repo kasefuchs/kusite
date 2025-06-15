@@ -5,8 +5,5 @@
   "license": "Apache-2.0",
   "private": true,
   "main": "./scss/index.scss",
-  "files": ["./scss"],
-  "devDependencies": {
-    "prettier": "^3.5.3"
-  }
+  "files": ["./scss"]
 }
