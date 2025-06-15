@@ -1,7 +1,7 @@
-import '#/styles/index.scss'
+import '@/styles/index.scss'
 import '@kusite/components/index.css'
 
-import Application from '#/Application'
+import Application from '@/Application'
 import { createElement, render } from 'preact'
 
 const container = document.getElementById('root')

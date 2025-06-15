@@ -1,11 +1,18 @@
-import type { InternalRequestOptions, RequestBody, RequestOptions, ResponseLike, Route } from '#/types'
-import { BodyType, DefaultOptions, Method } from './consts'
-import type { Options } from './types'
+import type {
+  InternalRequestOptions,
+  RequestBody,
+  RequestOptions,
+  ResponseLike,
+  Route,
+  Options,
+  ConstructorOptions,
+} from '@/types'
+import { BodyType, Method, DefaultOptions } from '@/constants'
 
-export default class HTTP {
+export default class REST {
   public readonly options: Options
 
-  public constructor(options?: Partial<Options>) {
+  public constructor(options: ConstructorOptions) {
     this.options = { ...DefaultOptions, ...options } as Options
   }
 
@@ -74,7 +81,7 @@ export default class HTTP {
     const url = new URL(`${this.options.baseURL}${route}`)
     if (params) url.search = params.toString()
 
-    const bodyInit = body ? HTTP.createBodyInit(body, bodyType) : null
+    const bodyInit = body ? REST.createBodyInit(body, bodyType) : null
 
     const response = await this.options.request(url, {
       body: method == Method.Get ? null : bodyInit,
@@ -82,6 +89,6 @@ export default class HTTP {
       method,
     })
 
-    return (await HTTP.parseResponse(response)) as R
+    return (await REST.parseResponse(response)) as R
   }
 }

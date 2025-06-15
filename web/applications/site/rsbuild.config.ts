@@ -3,6 +3,8 @@ import { pluginPreact } from '@rsbuild/plugin-preact'
 import { pluginSass } from '@rsbuild/plugin-sass'
 import { pluginTypedCSSModules } from '@rsbuild/plugin-typed-css-modules'
 import { pluginYaml } from '@rsbuild/plugin-yaml'
+
+// @ts-ignore
 import packageManifest from './package.json'
 
 export default defineConfig((config: ConfigParams): RsbuildConfig => {
@@ -11,29 +13,23 @@ export default defineConfig((config: ConfigParams): RsbuildConfig => {
 
   return {
     html: { title: 'Kusite' },
-    output: {
-      target: 'web',
-      cssModules: { namedExport: true },
-    },
     plugins: [
-      pluginPreact({
-        exclude: [/[\\/]node_modules[\\/]/, /[\\/]packages[\\/]/],
-      }),
+      pluginPreact({ exclude: [/[\\/]node_modules[\\/]/, /[\\/]packages[\\/]/] }),
       pluginSass(),
       pluginTypedCSSModules(),
       pluginYaml(),
     ],
+    output: {
+      cssModules: { namedExport: true },
+    },
     resolve: {
-      alias: {
-        '#': './src',
-      },
+      alias: { '@': './src' },
     },
     source: {
       define: {
         'import.meta.env.PACKAGE_NAME': JSON.stringify(packageManifest.name),
         ...publicVars,
       },
-      entry: { index: './src/index.ts' },
       preEntry: isDevelopment ? ['preact/debug'] : [],
     },
   }

@@ -1,4 +1,4 @@
-import type { IPersistentStore, IStore } from '#/types'
+import type { IPersistentStore, IStore } from '@/types'
 import stringify from 'json-stringify-deterministic'
 import localForage from 'localforage'
 import { reaction, type IReactionDisposer } from 'mobx'

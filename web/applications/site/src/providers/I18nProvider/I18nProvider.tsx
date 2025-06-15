@@ -14,7 +14,7 @@ export default class I18nProvider extends Component<Props, State> {
       // Do nothing.
     },
     read: async (language: Language, namespace: Namespace) => {
-      const module = await import(`#/assets/locales/${language}/${namespace}.yml`)
+      const module = await import(`@/assets/locales/${language}/${namespace}.yml`)
       return module.default
     },
   }

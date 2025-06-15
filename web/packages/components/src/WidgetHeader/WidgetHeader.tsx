@@ -1,5 +1,5 @@
-import Toolbar from '#/Toolbar'
-import Typography from '#/Typography'
+import Toolbar from '@/Toolbar'
+import Typography from '@/Typography'
 import clsx from 'clsx'
 import type { ComponentChildren } from 'preact'
 import type { Props } from './types'

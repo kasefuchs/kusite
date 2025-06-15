@@ -1,4 +1,4 @@
-import MarkdownWidget from '#/components/MarkdownWidget'
+import MarkdownWidget from '@/components/MarkdownWidget'
 import { Component, type ComponentChildren } from 'preact'
 import { withTranslation } from 'react-i18next'
 import * as styles from './Home.module.scss'

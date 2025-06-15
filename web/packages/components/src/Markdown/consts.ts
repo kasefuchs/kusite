@@ -1,5 +1,5 @@
-import Link, { type LinkProps } from '#/Link'
-import Typography, { type TypographyProps } from '#/Typography'
+import Link, { type LinkProps } from '@/Link'
+import Typography, { type TypographyProps } from '@/Typography'
 import type { MarkdownToJSX } from 'markdown-to-jsx'
 
 export const options: MarkdownToJSX.Options = {

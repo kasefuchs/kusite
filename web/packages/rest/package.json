@@ -1,5 +1,5 @@
 {
-  "name": "@kusite/http",
+  "name": "@kusite/rest",
   "type": "module",
   "version": "1.0.0",
   "license": "Apache-2.0",
@@ -26,10 +26,13 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@microsoft/api-extractor": "^7.52.7",
     "@rslib/core": "^0.6.8",
     "@tsconfig/strictest": "^2.0.5",
     "prettier": "^3.5.3",
+    "ts-essentials": "^10.0.4",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@swc/helpers": "^0.5.17"
   }
 }

@@ -1,4 +1,4 @@
-import Typography from '#/Typography'
+import Typography from '@/Typography'
 import clsx from 'clsx'
 import type { ComponentChildren } from 'preact'
 import { underlineMapping } from './consts'

@@ -1,4 +1,4 @@
-import Container from '#/Container'
+import Container from '@/Container'
 import clsx from 'clsx'
 import type { ComponentChildren } from 'preact'
 import type { Props } from './types'
