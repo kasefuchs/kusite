@@ -1,10 +1,11 @@
-import { Link } from '@kusite/components'
 import clsx from 'clsx'
 import { Link as WouterLink, useRoute } from 'wouter'
 import * as styles from './NavigationLink.module.scss'
 import type { Props } from './types'
+import type { ComponentChildren } from 'preact'
+import { Link } from '@kusite/components'
 
-export default function NavigationLink({ children, ...rest }: Props) {
+export default function NavigationLink({ children, ...rest }: Props): ComponentChildren {
   const [isActive] = useRoute(rest.to)
 
   return (
