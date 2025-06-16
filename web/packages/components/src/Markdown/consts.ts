@@ -1,6 +1,7 @@
 import Link, { type LinkProps } from '@/Link'
 import Typography, { type TypographyProps } from '@/Typography'
 import type { MarkdownToJSX } from 'markdown-to-jsx'
+import Divider, { type DividerProps } from '@/Divider'
 
 export const options: MarkdownToJSX.Options = {
   overrides: {
@@ -58,6 +59,13 @@ export const options: MarkdownToJSX.Options = {
       props: {
         underline: 'always',
       } satisfies LinkProps,
+    },
+    hr: {
+      component: Divider,
+      props: {
+        variant: 'full',
+        orientation: 'horizontal',
+      } satisfies DividerProps,
     },
   },
 }

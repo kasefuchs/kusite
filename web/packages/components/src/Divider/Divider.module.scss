@@ -1,0 +1,33 @@
+@use "@kusite/styles" as *;
+
+.divider {
+  border: none;
+  background-color: $color-divider;
+
+  &.divider-orientation-horizontal {
+    width: 100%;
+    height: $divider-thickness;
+
+    &.divider-variant-full {
+      margin: 8px 0;
+    }
+
+    &.divider-variant-middle {
+      margin: 8px auto;
+      width: calc(100% - 32px);
+    }
+  }
+
+  &.divider-orientation-vertical {
+    width: $divider-thickness;
+    height: 100%;
+
+    &.divider-variant-full {
+      margin: 0 8px;
+    }
+
+    &.divider-variant-middle {
+      margin: 0 16px;
+    }
+  }
+}

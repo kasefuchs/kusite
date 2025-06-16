@@ -5,9 +5,6 @@ root:
       home: Главная
       blog: Блог
 
-  footer:
-    copyright: © {{year}} — Kasefuchs
-
 home:
   primary:
     welcome:

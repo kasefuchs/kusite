@@ -9,12 +9,12 @@
   text-decoration: underline;
   text-decoration-color: transparent;
 
-  &.underline-never {
+  &.link-underline-never {
     text-decoration: none;
   }
 
-  &.underline-always,
-  &.underline-hover:hover {
+  &.link-underline-always,
+  &.link-underline-hover:hover {
     text-decoration-color: $color-text-highlight;
     &:not(:visited) {
       text-decoration-color: $color-primary;
