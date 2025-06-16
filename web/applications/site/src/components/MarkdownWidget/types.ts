@@ -1,5 +1,5 @@
+import type { ComponentChildren } from 'preact'
 import type { WidgetProps } from '@kusite/components'
-import { ComponentChildren } from 'preact'
 
 export type Props = Omit<WidgetProps, 'children'> & {
   title: ComponentChildren
