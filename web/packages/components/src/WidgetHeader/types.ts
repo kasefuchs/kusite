@@ -5,4 +5,5 @@ export type Props = JSX.HTMLAttributes & {
   element?: JSX.ElementType
   title?: ComponentChildren
   action?: ComponentChildren
+  [key: string]: any;
 }

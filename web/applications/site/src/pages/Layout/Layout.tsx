@@ -19,17 +19,14 @@ function Layout(): ComponentChildren {
   return (
     <div className={styles.layoutRoot}>
       <AppBar element="header" className={styles.layoutHeader}>
-        <img className={styles.layoutHeaderLogo} src={'https://avatars.githubusercontent.com/u/64592097'} />
-        <Toolbar className={styles.layoutHeaderContent}>
-          <Toolbar element="nav" className={styles.layoutNavigationRail}>
-            <NavigationLink to={'/'} children={t('header.navigation.home')} />
-            <NavigationLink to={'/blog'} children={t('header.navigation.blog')} />
-          </Toolbar>
-          <Toolbar element="fieldset" className={styles.layoutActionRail}>
-            <IconButton onClick={() => context.i18n.nextLanguage()}>
-              <RiEarthLine size={24} />
-            </IconButton>
-          </Toolbar>
+        <Toolbar element="nav" className={styles.layoutNavigationRail}>
+          <NavigationLink to={'/'} children={t('header.navigation.home')} />
+          <NavigationLink to={'/blog'} children={t('header.navigation.blog')} />
+        </Toolbar>
+        <Toolbar element="fieldset" className={styles.layoutActionRail}>
+          <IconButton onClick={() => context.i18n.nextLanguage()}>
+            <RiEarthLine size={24} />
+          </IconButton>
         </Toolbar>
       </AppBar>
       <main className={styles.layoutContent}>

@@ -6,4 +6,5 @@ export type Props = JSX.HTMLAttributes & {
   element?: JSX.ElementType
   variant?: Variant
   marginBottom?: boolean
+  [key: string]: any;
 }

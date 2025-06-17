@@ -8,4 +8,5 @@ export type Props = JSX.HTMLAttributes & {
   element?: JSX.ElementType
   variant?: Variant
   orientation?: Orientation
+  [key: string]: any;
 }
