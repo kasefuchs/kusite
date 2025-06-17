@@ -1,7 +1,9 @@
 import Link, { type LinkProps } from '@/Link'
 import Typography, { type TypographyProps } from '@/Typography'
 import type { MarkdownToJSX } from 'markdown-to-jsx'
-import Divider, { type DividerProps } from '@/Divider'
+import Divider from '@/Divider'
+import Image from '@/Image'
+import Container from '@/Container'
 
 export const options: MarkdownToJSX.Options = {
   overrides: {
@@ -60,12 +62,17 @@ export const options: MarkdownToJSX.Options = {
         underline: 'always',
       } satisfies LinkProps,
     },
-    hr: {
-      component: Divider,
+    hr: { component: Divider },
+    img: { component: Image },
+    pre: {
+      component: Typography,
       props: {
-        variant: 'full',
-        orientation: 'horizontal',
-      } satisfies DividerProps,
+        element: 'pre',
+        variant: 'body2',
+        marginBottom: true,
+      } satisfies TypographyProps,
     },
+    code: { component: Container },
+    Container: { component: Container },
   },
 }

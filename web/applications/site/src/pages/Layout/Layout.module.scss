@@ -2,7 +2,6 @@
 
 .layout-root {
   @include flexbox(column, flex-start, stretch, 1);
-
   width: 100%;
   height: 100%;
   max-width: 1200px;
@@ -11,12 +10,14 @@
   gap: 20px;
 }
 
-.layout-header,
-.layout-footer {
+.layout-header {
   height: 45px;
+  padding: 0 20px;
+  gap: 20px;
 }
 
 .layout-footer {
+  height: 45px;
   justify-content: center;
 }
 
@@ -27,23 +28,11 @@
 .layout-navigation-rail {
   flex-grow: 1;
   align-items: stretch;
-}
-
-.layout-action-rail,
-.layout-header-content,
-.layout-navigation-rail {
-  gap: 25px;
+  gap: 20px;
   height: 100%;
 }
 
-.layout-header-content {
-  flex-grow: 1;
-  padding: 0 25px;
-}
-
-.layout-header-logo {
-  width: 45px;
-  height: 45px;
-  outline: $color-container-border solid $container-border-width;
-  border-radius: $container-border-radius 0 0 $container-border-radius;
+.layout-action-rail {
+  gap: 20px;
+  height: 100%;
 }

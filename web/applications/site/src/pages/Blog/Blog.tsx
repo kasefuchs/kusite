@@ -13,7 +13,7 @@ export default function Blog(): ComponentChildren {
         <WidgetHeader
           title={t('articles.title')}
           action={
-            <IconButton>
+            <IconButton element="a" href="/">
               <RiRssLine />
             </IconButton>
           }
