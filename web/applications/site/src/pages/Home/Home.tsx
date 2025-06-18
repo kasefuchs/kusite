@@ -9,10 +9,10 @@ export default function Home(): ComponentChildren {
   return (
     <div className={styles.homeRoot}>
       <div className={styles.homePrimary}>
-        <MarkdownWidget title={t('primary.welcome.title')} children={t('primary.welcome.content')} />
+        <MarkdownWidget label={t('primary.welcome.title')} children={t('primary.welcome.content')} />
       </div>
       <div className={styles.homeSecondary}>
-        <MarkdownWidget title="Test">Hello?</MarkdownWidget>
+        <MarkdownWidget label="Test">Hello?</MarkdownWidget>
       </div>
     </div>
   )

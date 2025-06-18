@@ -8,13 +8,13 @@ import * as styles from './WidgetHeader.module.scss'
 export default function WidgetHeader({
   element: Element = 'div',
   className,
-  title,
+  label,
   action,
   ...rest
 }: Props): ComponentChildren {
   return (
     <Element className={clsx(styles.widgetHeader, className)} {...rest}>
-      <Typography variant="subtitle1" className={styles.widgetHeaderTitle} children={title} />
+      <Typography variant="subtitle1" className={styles.widgetHeaderTitle} children={label} />
       <Toolbar children={action} />
     </Element>
   )

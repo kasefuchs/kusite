@@ -2,5 +2,5 @@ import type { JSX } from 'preact'
 
 export type Props = JSX.HTMLAttributes & {
   element?: JSX.ElementType
-  [key: string]: any;
+  [key: string]: any
 }
