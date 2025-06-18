@@ -11,7 +11,7 @@ export default function Blog(): ComponentChildren {
     <div className={styles.blogRoot}>
       <Widget>
         <WidgetHeader
-          title={t('articles.title')}
+          label={t('articles.title')}
           action={
             <IconButton element="a" href="/">
               <RiRssLine />

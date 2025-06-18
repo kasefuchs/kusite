@@ -3,7 +3,7 @@ import type { JSX } from 'preact/jsx-runtime'
 
 export type Props = JSX.HTMLAttributes & {
   element?: JSX.ElementType
-  title?: ComponentChildren
+  label?: ComponentChildren
   action?: ComponentChildren
-  [key: string]: any;
+  [key: string]: any
 }
