@@ -1,14 +1,14 @@
 $font-primary: "Jetbrains Mono";
 
 $color-background: #0f0f0f;
-$color-primary: #ff6600;
-$color-divider: #7a7a7a	;
+$color-container: #171717;
+$color-container-border: #1e1e1e;
+$color-divider: #555;
 $color-text: #959595;
 $color-text-highlight: #d9d9d9;
-$color-container: #121212;
-$color-container-border: #1a1a1a;
+$color-primary: #ff6600;
 
-$container-border-radius: 5px;
-$container-border-width: 2px;
-
+$container-gap: 16px;
+$container-padding: 12px;
 $divider-thickness: 2px;
+$container-border-width: 2px;

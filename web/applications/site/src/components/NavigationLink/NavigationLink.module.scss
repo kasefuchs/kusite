@@ -1,22 +1,33 @@
 @use "@kusite/styles" as *;
 
 .navigation-link {
-  color: $color-text !important;
-
+  position: relative;
   align-content: center;
-  border-bottom: 2px solid transparent;
+  color: $color-text !important;
+  transition: color 300ms;
 
-  transition:
-    color 300ms,
-    border-bottom-color 300ms;
-
-  &.navigation-link-active {
-    color: $color-text-highlight !important;
-    border-bottom-color: $color-primary;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: $container-border-width;
+    bottom: -$container-border-width;
+    background-color: transparent;
+    transition: background-color 300ms;
+    pointer-events: none;
   }
 
+  &.navigation-link-active,
   &:not(&.navigation-link-active):hover {
     color: $color-text-highlight !important;
-    border-bottom-color: $color-text;
+  }
+
+  &.navigation-link-active::after {
+    background-color: $color-primary;
+  }
+
+  &:not(&.navigation-link-active):hover::after {
+    background-color: $color-text;
   }
 }

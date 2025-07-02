@@ -1,6 +1,8 @@
+@use "@kusite/styles" as *;
+
 .widget {
   display: flex;
   flex-direction: column;
 
-  gap: 10px;
+  gap: $container-padding;
 }
