@@ -3,7 +3,7 @@
 .widget-header {
   @include flexbox(row, flex-start, center, 1);
 
-  padding: 0 5px;
+  padding: 0 $container-padding;
 }
 
 .widget-header-title {

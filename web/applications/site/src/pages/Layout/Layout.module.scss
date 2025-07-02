@@ -2,18 +2,18 @@
 
 .layout-root {
   @include flexbox(column, flex-start, stretch, 1);
+
   width: 100%;
   height: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 15px;
-  gap: 20px;
+  gap: $container-gap;
+  padding: $container-padding;
 }
 
 .layout-header {
+  gap: $container-gap;
   height: 45px;
-  padding: 0 20px;
-  gap: 20px;
 }
 
 .layout-footer {
@@ -28,11 +28,11 @@
 .layout-navigation-rail {
   flex-grow: 1;
   align-items: stretch;
-  gap: 20px;
+  gap: $container-gap;
   height: 100%;
 }
 
 .layout-action-rail {
-  gap: 20px;
+  gap: $container-gap;
   height: 100%;
 }
