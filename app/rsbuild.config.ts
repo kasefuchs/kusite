@@ -11,7 +11,7 @@ export default defineConfig({
         rules: [
           {
             test: /\.ts$/,
-            use: [{ loader: "minify-html-literals-loader" }],
+            use: [{ loader: "@kusite/minify-literals-loader" }],
           },
         ],
       },
