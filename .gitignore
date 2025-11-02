@@ -1,0 +1,23 @@
+# --- IDE / Editor ---
+# JetBrains
+.idea/
+*.iml
+
+# VSCode
+.vscode/
+
+# --- Node ---
+# Dependencies
+.pnpm-store/
+node_modules/
+
+# Lockfiles
+pnpm-lock.yaml
+
+# --- Tools / Bundlers ---
+# Rspack / Rslib
+.rslib/
+
+# --- Build artifacts ---
+# Compiled output
+dist/
