@@ -1,7 +1,0 @@
-@use "@kusite/styles" as *;
-
-.app-bar {
-  @include flexbox(row, flex-start, center, 0);
-
-  padding: 0 $container-padding;
-}

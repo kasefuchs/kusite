@@ -1,7 +1,0 @@
-@use "@kusite/styles" as *;
-
-.blog-root {
-  @include flexbox(column, flex-start, stretch, 1);
-
-  gap: 20px;
-}
