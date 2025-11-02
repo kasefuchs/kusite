@@ -1,0 +1,18 @@
+{
+  "extends": "@tsconfig/strictest/tsconfig.json",
+  "compilerOptions": {
+    /* library */
+    "lib": ["DOM", "ES2020"],
+    "target": "ES2020",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "useDefineForClassFields": false,
+
+    /* modules */
+    "module": "ESNext",
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true
+  }
+}

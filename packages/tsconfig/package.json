@@ -1,0 +1,11 @@
+{
+  "name": "@kusite/tsconfig",
+  "type": "module",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "private": true,
+  "main": "tsconfig.json",
+  "dependencies": {
+    "@tsconfig/strictest": "^2.0.7"
+  }
+}
