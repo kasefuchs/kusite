@@ -2,8 +2,8 @@ import { html, css, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
 
 @customElement("application-root")
-export class Application extends LitElement {
-  public static override styles = css`
+export default class Application extends LitElement {
+  public static override readonly styles = css`
     .content {
       display: flex;
       min-height: 100vh;
