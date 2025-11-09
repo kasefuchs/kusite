@@ -1,0 +1,10 @@
+{
+  "extends": "@kusite/tsconfig",
+  "include": ["./src/"],
+  "compilerOptions": {
+    "types": ["@rslib/core/types"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}

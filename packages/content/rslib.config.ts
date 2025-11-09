@@ -5,9 +5,12 @@ export default defineConfig({
   lib: [
     {
       dts: true,
-      format: "cjs",
+      format: "esm",
       syntax: "es2020",
       externalHelpers: true,
     },
   ],
+  resolve: {
+    alias: { "@": "./src" },
+  },
 });

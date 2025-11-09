@@ -1,8 +1,8 @@
 import { html, css, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
 
-@customElement("application-root")
-export default class Application extends LitElement {
+@customElement("ks-app")
+export default class App extends LitElement {
   public static override readonly styles = css`
     .content {
       display: flex;

@@ -4,7 +4,10 @@ import { type DefaultOptions, minifyHTMLLiterals } from "minify-literals";
 export type MinifyLiteralsLoaderOptions = Omit<DefaultOptions, "fileName">;
 
 // noinspection JSUnusedGlobalSymbols
-export default function minifyLiteralsLoader(this: LoaderContext<MinifyLiteralsLoaderOptions | undefined>, source: string) {
+export default function minifyLiteralsLoader(
+  this: LoaderContext<MinifyLiteralsLoaderOptions | undefined>,
+  source: string,
+) {
   const options: DefaultOptions = {
     fileName: this.resourcePath,
     ...this.getOptions(),

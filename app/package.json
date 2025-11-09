@@ -15,7 +15,8 @@
   "devDependencies": {
     "@kusite/minify-literals-loader": "workspace:^",
     "@kusite/tsconfig": "workspace:^",
-    "@rsbuild/core": "^1.6.0",
+    "@kusite/components": "workspace:^",
+    "@rsbuild/core": "^1.6.3",
     "typescript": "^5.9.3"
   }
 }

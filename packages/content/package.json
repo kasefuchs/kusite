@@ -1,6 +1,6 @@
 {
-  "name": "@kusite/minify-literals-loader",
-  "type": "commonjs",
+  "name": "@kusite/content",
+  "type": "module",
   "version": "1.0.0",
   "license": "Apache-2.0",
   "private": true,
@@ -9,17 +9,23 @@
   "files": [
     "./dist"
   ],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
   "scripts": {
     "build": "rslib build"
   },
   "dependencies": {
-    "@swc/helpers": "^0.5.17",
-    "minify-literals": "^1.0.10"
+    "@swc/helpers": "^0.5.17"
   },
   "devDependencies": {
     "@kusite/tsconfig": "workspace:^",
     "@rslib/core": "^0.6.9",
-    "@rspack/core": "^1.6.1",
     "typescript": "^5.9.3"
   }
 }
