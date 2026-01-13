@@ -10,7 +10,7 @@ when:
 
 steps:
   - name: build
-    image: node:alpine
+    image: node:24-alpine
     commands:
       - corepack enable
       - pnpm install
