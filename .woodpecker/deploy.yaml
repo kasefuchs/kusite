@@ -1,0 +1,27 @@
+---
+when:
+  - event: push
+    branch: main
+    path:
+      include:
+        - .woodpecker/deploy.yaml
+        - "**.ts"
+        - "**.json"
+
+steps:
+  - name: build
+    image: node:alpine
+    commands:
+      - corepack enable
+      - pnpm install
+      - pnpm run --recursive build
+
+  - name: deploy
+    image: jfxs/wrangler
+    environment:
+      CLOUDFLARE_ACCOUNT_ID:
+        from_secret: CLOUDFLARE_ACCOUNT_ID
+      CLOUDFLARE_API_TOKEN:
+        from_secret: CLOUDFLARE_PAGES_API_TOKEN
+    commands:
+      - wrangler pages deploy app/dist/ --project-name "$${CI_REPO_NAME}"
