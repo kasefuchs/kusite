@@ -3,5 +3,7 @@ import type { ComponentChildren } from "preact";
 import type { Props } from "./types";
 
 export default function ApplicationProvider(props: Props): ComponentChildren {
-  return <RootStoreProvider>{props.children}</RootStoreProvider>;
+  return <RootStoreProvider children={props.children} />;
 }
+
+export type { Props as ApplicationProviderProps } from "./types";

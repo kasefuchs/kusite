@@ -11,7 +11,7 @@ export default abstract class CompositeStore implements ISerializableStore<Compo
   serialize(): CompositeStoreState {
     const data: CompositeStoreState = {};
     for (const store of this.stores) {
-      data[store.id] = store;
+      data[store.id] = store.serialize();
     }
 
     return data;

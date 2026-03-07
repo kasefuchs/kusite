@@ -12,8 +12,7 @@ export default class PersistentStore {
   public setup(): IReactionDisposer {
     return reaction(
       () => stringify(this.store.serialize()),
-      async (serialized) =>
-        this.storage.setItem(this.store.id, JSON.parse(serialized)),
+      async (serialized) => this.storage.setItem(this.store.id, JSON.parse(serialized)),
       { name: `PersistentStoreReaction(${this.store.id})` },
     );
   }
