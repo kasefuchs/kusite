@@ -1,4 +1,0 @@
-{
-  "extends": "@kusite/tsconfig",
-  "include": ["./src/"]
-}
