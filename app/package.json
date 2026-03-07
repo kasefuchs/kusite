@@ -1,0 +1,28 @@
+{
+  "name": "@kusite/app",
+  "type": "module",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "rsbuild dev",
+    "build": "rsbuild build",
+    "preview": "rsbuild preview"
+  },
+  "browserslist": [
+    "iOS >= 9",
+    "Android >= 4.4",
+    "last 2 versions",
+    "> 0.2%",
+    "not dead"
+  ],
+  "dependencies": {
+    "preact": "^10.28.4"
+  },
+  "devDependencies": {
+    "@kusite/tsconfig": "workspace:^",
+    "@rsbuild/core": "^1.7.3",
+    "@rsbuild/plugin-preact": "^1.7.1",
+    "typescript": "^5.9.3"
+  }
+}

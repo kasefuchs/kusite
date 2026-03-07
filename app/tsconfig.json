@@ -1,0 +1,10 @@
+{
+  "extends": "@kusite/tsconfig/src/preact.json",
+  "include": ["./src/"],
+  "compilerOptions": {
+    "types": ["@rsbuild/core/types"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}

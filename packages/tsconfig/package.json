@@ -1,0 +1,10 @@
+{
+  "name": "@kusite/tsconfig",
+  "type": "module",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@tsconfig/strictest": "^2.0.8"
+  }
+}
