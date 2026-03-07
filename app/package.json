@@ -17,10 +17,12 @@
     "not dead"
   ],
   "dependencies": {
-    "preact": "^10.28.4"
+    "preact": "^10.28.4",
+    "localforage": "^1.10.0"
   },
   "devDependencies": {
     "@kusite/tsconfig": "workspace:^",
+    "@kusite/store": "workspace:^",
     "@rsbuild/core": "^1.7.3",
     "@rsbuild/plugin-preact": "^1.7.1",
     "typescript": "^5.9.3"

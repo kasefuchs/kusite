@@ -1,5 +1,6 @@
 import type { ComponentChildren } from "preact";
+import ApplicationProvider from "@/providers/ApplicationProvider";
 
 export default function Application(): ComponentChildren {
-  return undefined;
+  return <ApplicationProvider children={undefined} />;
 }
