@@ -27,7 +27,7 @@
   "dependencies": {
     "@swc/helpers": "^0.5.19",
     "json-stringify-deterministic": "^1.0.12",
-    "localforage": "^1.10.0",
+    "localspace": "^1.1.1",
     "mobx": "^6.15.0"
   },
   "devDependencies": {

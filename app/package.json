@@ -18,7 +18,7 @@
   ],
   "dependencies": {
     "preact": "^10.28.4",
-    "localforage": "^1.10.0",
+    "localspace": "^1.1.1",
     "mobx": "^6.15.0",
     "mobx-react": "^9.2.0"
   },
