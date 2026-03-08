@@ -1,5 +1,7 @@
 import { type ConfigParams, defineConfig, type RsbuildConfig } from "@rsbuild/core";
 import { pluginPreact } from "@rsbuild/plugin-preact";
+import { pluginSass } from "@rsbuild/plugin-sass";
+import { pluginTypedCSSModules } from "@rsbuild/plugin-typed-css-modules";
 
 export default defineConfig((config: ConfigParams): RsbuildConfig => {
   const isDevelopment = config.env == "development";
@@ -10,7 +12,12 @@ export default defineConfig((config: ConfigParams): RsbuildConfig => {
       pluginPreact({
         exclude: [/[\\/]node_modules[\\/]/, /[\\/]packages[\\/]/],
       }),
+      pluginSass(),
+      pluginTypedCSSModules(),
     ],
+    output: {
+      cssModules: { namedExport: true },
+    },
     resolve: {
       alias: { "@": "./src" },
     },

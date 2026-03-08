@@ -2,7 +2,7 @@
   "extends": "@kusite/tsconfig/src/preact.json",
   "include": ["./src/"],
   "compilerOptions": {
-    "types": ["@rsbuild/core/types"],
+    "types": ["@rslib/core/types"],
     "paths": {
       "@/*": ["./src/*"],
       "react": ["./node_modules/preact/compat/"],

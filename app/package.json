@@ -17,16 +17,19 @@
     "not dead"
   ],
   "dependencies": {
-    "preact": "^10.28.4",
-    "localspace": "^1.1.1",
     "mobx": "^6.15.0",
-    "mobx-react": "^9.2.0"
+    "mobx-react": "^9.2.1",
+    "preact": "^10.28.4",
+    "react-draggable": "^4.5.0"
   },
   "devDependencies": {
-    "@kusite/tsconfig": "workspace:^",
     "@kusite/store": "workspace:^",
+    "@kusite/tsconfig": "workspace:^",
+    "@kusite/window-manager": "workspace:^",
     "@rsbuild/core": "^1.7.3",
     "@rsbuild/plugin-preact": "^1.7.1",
+    "@rsbuild/plugin-sass": "^1.5.0",
+    "@rsbuild/plugin-typed-css-modules": "^1.2.2",
     "typescript": "^5.9.3"
   }
 }

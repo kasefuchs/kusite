@@ -1,6 +1,5 @@
-import RootStoreContext from "@/contexts/RootStoreContext";
-import RootStore from "@/stores/RootStore.ts";
-import localspace from "localspace";
+import RootStore from "@/stores/RootStore";
+import RootStoreContext from "@/contexts/RootStoreContext.ts";
 import { PersistentStore } from "@kusite/store";
 import { useEffect, useRef, useState } from "preact/hooks";
 import type { IReactionDisposer } from "mobx";
@@ -11,7 +10,7 @@ export default function RootStoreProvider(props: Props): ComponentChildren {
   const [initialized, setInitialized] = useState(false);
 
   const storeRef = useRef(new RootStore());
-  const persistenceRef = useRef(new PersistentStore(storeRef.current, localspace));
+  const persistenceRef = useRef(new PersistentStore(storeRef.current));
 
   useEffect(() => {
     let disposer: IReactionDisposer;

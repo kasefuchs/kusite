@@ -1,12 +1,12 @@
-import type { ISerializableStore } from "@/types";
 import stringify from "json-stringify-deterministic";
+import localspace, { type LocalSpaceInstance } from "localspace";
 import { reaction, type IReactionDisposer } from "mobx";
-import type { LocalSpaceInstance } from "localspace";
+import type { ISerializableStore } from "@/types";
 
 export default class PersistentStore {
   public constructor(
     public readonly store: ISerializableStore,
-    private readonly storage: LocalSpaceInstance,
+    private readonly storage: LocalSpaceInstance = localspace,
   ) {}
 
   public setup(): IReactionDisposer {
