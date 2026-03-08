@@ -8,13 +8,16 @@ import { WindowInstanceProvider } from "@/providers";
 function WindowManager(_: Props): ComponentChildren {
   const { store } = useWindowManager();
 
-  return Object.entries(store.descriptors).map(([key, value]) => {
-    return (
-      <WindowInstanceProvider key={key} descriptor={value}>
-        <WindowInstance />
-      </WindowInstanceProvider>
-    );
-  });
+  return store.descriptors
+    .entries()
+    .map(([key, value]) => {
+      return (
+        <WindowInstanceProvider key={key} descriptor={value}>
+          <WindowInstance />
+        </WindowInstanceProvider>
+      );
+    })
+    .toArray();
 }
 
 export default observer(WindowManager);

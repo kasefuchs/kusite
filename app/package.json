@@ -20,7 +20,7 @@
     "mobx": "^6.15.0",
     "mobx-react": "^9.2.1",
     "preact": "^10.28.4",
-    "react-draggable": "^4.5.0"
+    "xp.css": "^0.2.6"
   },
   "devDependencies": {
     "@kusite/store": "workspace:^",

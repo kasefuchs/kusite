@@ -3,7 +3,7 @@ import type { AsyncOrSync } from "ts-essentials";
 
 type CompositeStoreState = Record<string, unknown>;
 
-export default abstract class CompositeStore implements ISerializableStore<CompositeStoreState> {
+export default abstract class CompositeSerializableStore implements ISerializableStore<CompositeStoreState> {
   protected abstract stores: ISerializableStore[];
 
   protected constructor(public readonly id: string) {}

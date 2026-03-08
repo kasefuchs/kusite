@@ -1,18 +1,21 @@
+import { ulid } from "ulid";
+import { action, computed, observable, type ObservableMap } from "mobx";
 import type { IStore } from "@kusite/store";
 import type { IWindowDescriptor } from "@/types";
-import { action, computed, observable } from "mobx";
 import type { ComponentType } from "preact";
-import { ulid } from "ulid";
 
 export default class WindowManagerStore implements IStore {
   public readonly id: string = "window-manager";
 
   @observable
-  public accessor descriptors: Record<string, IWindowDescriptor> = {};
+  public accessor descriptors: ObservableMap<string, IWindowDescriptor> = observable.map();
 
   @computed
   public get maxZIndex(): number {
-    const zIndices = Object.values(this.descriptors).map(({ transform }) => transform.zIndex);
+    const zIndices = this.descriptors
+      .values()
+      .map(({ transform }) => transform.zIndex)
+      .toArray();
 
     return zIndices.length ? Math.max(...zIndices) : 100;
   }
@@ -20,8 +23,7 @@ export default class WindowManagerStore implements IStore {
   @action
   public addWindow<P, D>(Component: ComponentType<P>, props?: P, data?: D): IWindowDescriptor {
     const id = ulid();
-
-    return (this.descriptors[id] = {
+    const descriptor: IWindowDescriptor = {
       id,
       data,
       content: { Component, props },
@@ -32,35 +34,39 @@ export default class WindowManagerStore implements IStore {
         height: 320,
         zIndex: this.maxZIndex + 1,
       },
-    });
+    };
+
+    this.descriptors.set(id, descriptor);
+    return descriptor;
   }
 
   @action
   public closeWindow(id: string): boolean {
-    return delete this.descriptors[id];
+    return this.descriptors.delete(id);
   }
 
   @action
   public updateWindowPosition(id: string, x: number, y: number) {
-    if (this.descriptors[id]) {
-      this.descriptors[id].transform.x = x;
-      this.descriptors[id].transform.y = y;
+    const descriptor = this.descriptors.get(id);
+    if (descriptor) {
+      descriptor.transform.x = x;
+      descriptor.transform.y = y;
     }
   }
 
   @action
   public updateWindowSize(id: string, width: number, height: number) {
-    if (this.descriptors[id]) {
-      this.descriptors[id].transform.width = width;
-      this.descriptors[id].transform.height = height;
+    const descriptor = this.descriptors.get(id);
+    if (descriptor) {
+      descriptor.transform.width = width;
+      descriptor.transform.height = height;
     }
   }
 
   @action
   public focusWindow(id: string): number {
-    if (this.descriptors[id] && this.descriptors[id].transform.zIndex < this.maxZIndex) {
-      return (this.descriptors[id].transform.zIndex = this.maxZIndex + 1);
-    }
+    const descriptor = this.descriptors.get(id);
+    if (descriptor) return (descriptor.transform.zIndex = this.maxZIndex + 1);
 
     return -1;
   }

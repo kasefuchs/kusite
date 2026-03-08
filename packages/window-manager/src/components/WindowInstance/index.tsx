@@ -10,7 +10,7 @@ function WindowInstance(_: Props): ComponentChildren {
   const instance = useWindowInstance();
   const { transform, content } = instance.descriptor;
 
-  const handleDragStart: DraggableEventHandler = () => {
+  const handleFocus = () => {
     instance.focus();
   };
 
@@ -26,13 +26,14 @@ function WindowInstance(_: Props): ComponentChildren {
     <Draggable
       position={{ x: transform.x, y: transform.y }}
       handle=".window-drag-handle"
-      onStart={handleDragStart}
+      onStart={handleFocus}
       onStop={handleDragStop}
     >
-      <Resizable width={transform.width} height={transform.height} onResize={handleResize}>
+      <Resizable width={transform.width} height={transform.height} onResize={handleResize} onResizeStart={handleFocus}>
         <div
           style={{ width: transform.width, height: transform.height, zIndex: transform.zIndex }}
           className={styles.window}
+          onClick={handleFocus}
         >
           <content.Component {...content.props} />
         </div>
