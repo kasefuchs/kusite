@@ -1,5 +1,5 @@
 import RootStore from "@/stores/RootStore";
-import RootStoreContext from "@/contexts/RootStoreContext.ts";
+import RootStoreContext from "@/contexts/RootStoreContext";
 import { PersistentStore } from "@kusite/store";
 import { useEffect, useRef, useState } from "preact/hooks";
 import type { IReactionDisposer } from "mobx";

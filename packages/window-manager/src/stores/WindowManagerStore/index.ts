@@ -3,7 +3,7 @@ import { ulid } from "ulid";
 import { action, computed, observable, type ObservableMap } from "mobx";
 import type { IStore } from "@kusite/store";
 import type { IWindowDescriptor, WindowPosition, WindowSize } from "@/types";
-import { IAddWindowOptions } from "@/stores/WindowManagerStore/types";
+import type { IAddWindowOptions } from "./types";
 
 export default class WindowManagerStore implements IStore {
   public readonly id: string = "window-manager";
@@ -22,11 +22,11 @@ export default class WindowManagerStore implements IStore {
   }
 
   @action
-  public addWindow<D = undefined>(options: IAddWindowOptions<D>): IWindowDescriptor {
+  public addWindow<D = undefined>({ children, ...options }: IAddWindowOptions<D>): IWindowDescriptor {
     const id = ulid();
     const base: IWindowDescriptor<D> = {
       id,
-      children: undefined,
+      children,
       transform: {
         position: [128, 128],
         size: [480, 320],
@@ -35,7 +35,10 @@ export default class WindowManagerStore implements IStore {
       constraints: {},
     };
 
-    const descriptor = merge(base, options);
+    const merged = merge(base, options);
+    const descriptor = observable.object(merged, {
+      children: observable.ref,
+    });
 
     this.descriptors.set(id, descriptor);
     return descriptor;
