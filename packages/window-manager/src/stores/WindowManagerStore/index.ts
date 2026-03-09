@@ -1,4 +1,4 @@
-import merge from "lodash.merge";
+import mergeWith from "lodash.mergewith";
 import { ulid } from "ulid";
 import { action, computed, observable, type ObservableMap } from "mobx";
 import type { IStore } from "@kusite/store";
@@ -27,6 +27,10 @@ export default class WindowManagerStore implements IStore {
     const base: IWindowDescriptor<D> = {
       id,
       children,
+      handles: {
+        dragClassName: "window-drag-handle",
+        resizeDirections: ["n", "e", "s", "w", "ne", "se", "sw", "nw"],
+      },
       transform: {
         position: [128, 128],
         size: [480, 320],
@@ -35,7 +39,11 @@ export default class WindowManagerStore implements IStore {
       constraints: {},
     };
 
-    const merged = merge(base, options);
+    const merged = mergeWith(base, options, (_: any, srcValue): any => {
+      if (Array.isArray(srcValue)) {
+        return srcValue;
+      }
+    });
     const descriptor = observable.object(merged, {
       children: observable.ref,
     });

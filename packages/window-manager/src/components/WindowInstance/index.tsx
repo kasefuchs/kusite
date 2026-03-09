@@ -8,7 +8,7 @@ import * as styles from "./index.module.scss";
 
 function WindowInstance(_: Props): ComponentChildren {
   const instance = useWindowInstance();
-  const { children, transform, constraints } = instance.descriptor;
+  const { children, handles, transform, constraints } = instance.descriptor;
 
   const handleFocus = () => {
     instance.focus();
@@ -18,8 +18,16 @@ function WindowInstance(_: Props): ComponentChildren {
     instance.updatePosition([x, y]);
   };
 
-  const handleResize = (_: unknown, { size }: ResizeCallbackData) => {
-    instance.updateSize([size.width, size.height]);
+  const handleResize = (_: unknown, { size, handle }: ResizeCallbackData) => {
+    const [oldWidth, oldHeight] = transform.size;
+    const [newWidth, newHeight] = [size.width, size.height];
+    let [x, y] = transform.position;
+
+    if (handle.endsWith("w")) x -= newWidth - oldWidth;
+    if (handle.startsWith("n")) y -= newHeight - oldHeight;
+
+    instance.updateSize([newWidth, newHeight]);
+    instance.updatePosition([x, y]);
   };
 
   return (
@@ -27,13 +35,14 @@ function WindowInstance(_: Props): ComponentChildren {
       position={{ x: transform.position[0], y: transform.position[1] }}
       onStart={handleFocus}
       onStop={handleDragStop}
-      handle=".window-drag-handle"
+      handle={`.${handles.dragClassName}`}
     >
       <Resizable
         width={transform.size[0]}
         height={transform.size[1]}
         onResize={handleResize}
         onResizeStart={handleFocus}
+        resizeHandles={handles.resizeDirections}
         minConstraints={constraints.min}
         maxConstraints={constraints.max}
       >

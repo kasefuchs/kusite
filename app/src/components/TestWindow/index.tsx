@@ -8,7 +8,7 @@ function TestWindow(): ComponentChildren {
 
   return (
     <div className={`window ${styles.window}`}>
-      <div className="title-bar window-drag-handle">
+      <div className={`title-bar ${instance.descriptor.handles.dragClassName}`}>
         <span className="title-bar-text" children={instance.descriptor.id} />
         <div className="title-bar-controls">
           <button aria-label="Close" onClick={() => instance.close()} />
