@@ -17,10 +17,10 @@ function TestWindow(): ComponentChildren {
       <div className="window-body">
         <span className={styles.position}>
           <span>
-            <b>X:</b> {instance.descriptor.transform.x}
+            <b>X:</b> {instance.descriptor.transform.position[0]}
           </span>
           <span>
-            <b>Y:</b> {instance.descriptor.transform.y}
+            <b>Y:</b> {instance.descriptor.transform.position[1]}
           </span>
           <span>
             <b>Z:</b> {instance.descriptor.transform.zIndex}
@@ -28,10 +28,10 @@ function TestWindow(): ComponentChildren {
         </span>
         <span className={styles.size}>
           <span>
-            <b>Width:</b> {instance.descriptor.transform.width}
+            <b>Width:</b> {instance.descriptor.transform.size[0]}
           </span>
           <span>
-            <b>Height:</b> {instance.descriptor.transform.height}
+            <b>Height:</b> {instance.descriptor.transform.size[1]}
           </span>
         </span>
       </div>

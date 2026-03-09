@@ -1,8 +1,9 @@
+import merge from "lodash.merge";
 import { ulid } from "ulid";
 import { action, computed, observable, type ObservableMap } from "mobx";
 import type { IStore } from "@kusite/store";
-import type { IWindowDescriptor } from "@/types";
-import type { ComponentType } from "preact";
+import type { IWindowDescriptor, WindowPosition, WindowSize } from "@/types";
+import { IAddWindowOptions } from "@/stores/WindowManagerStore/types";
 
 export default class WindowManagerStore implements IStore {
   public readonly id: string = "window-manager";
@@ -21,20 +22,20 @@ export default class WindowManagerStore implements IStore {
   }
 
   @action
-  public addWindow<P, D>(Component: ComponentType<P>, props?: P, data?: D): IWindowDescriptor {
+  public addWindow<D = undefined>(options: IAddWindowOptions<D>): IWindowDescriptor {
     const id = ulid();
-    const descriptor: IWindowDescriptor = {
+    const base: IWindowDescriptor<D> = {
       id,
-      data,
-      content: { Component, props },
+      children: undefined,
       transform: {
-        x: 128,
-        y: 128,
-        width: 480,
-        height: 320,
+        position: [128, 128],
+        size: [480, 320],
         zIndex: this.maxZIndex + 1,
       },
+      constraints: {},
     };
+
+    const descriptor = merge(base, options);
 
     this.descriptors.set(id, descriptor);
     return descriptor;
@@ -46,27 +47,23 @@ export default class WindowManagerStore implements IStore {
   }
 
   @action
-  public updateWindowPosition(id: string, x: number, y: number) {
+  public updateWindowPosition(id: string, position: WindowPosition): void {
     const descriptor = this.descriptors.get(id);
-    if (descriptor) {
-      descriptor.transform.x = x;
-      descriptor.transform.y = y;
-    }
+    if (descriptor) descriptor.transform.position = position;
   }
 
   @action
-  public updateWindowSize(id: string, width: number, height: number) {
+  public updateWindowSize(id: string, size: WindowSize): void {
     const descriptor = this.descriptors.get(id);
-    if (descriptor) {
-      descriptor.transform.width = width;
-      descriptor.transform.height = height;
-    }
+    if (descriptor) descriptor.transform.size = size;
   }
 
   @action
   public focusWindow(id: string): number {
     const descriptor = this.descriptors.get(id);
-    if (descriptor) return (descriptor.transform.zIndex = this.maxZIndex + 1);
+    if (descriptor && descriptor.transform.zIndex < this.maxZIndex) {
+      return (descriptor.transform.zIndex = this.maxZIndex + 1);
+    }
 
     return -1;
   }

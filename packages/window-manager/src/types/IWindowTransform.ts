@@ -1,9 +1,8 @@
-export default interface IWindowTransform {
-  x: number;
-  y: number;
+import type { WindowPosition, WindowSize } from "./types";
 
-  width: number;
-  height: number;
+export default interface IWindowTransform {
+  position: WindowPosition;
+  size: WindowSize;
 
   zIndex: number;
 }

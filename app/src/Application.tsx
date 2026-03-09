@@ -8,7 +8,23 @@ export default function Application(): ComponentChildren {
     <ApplicationProvider>
       <WindowManager />
       <WindowManagerContext.Consumer>
-        {(value) => <button onClick={() => value!.store.addWindow(TestWindow)}>Add window!</button>}
+        {(value) => (
+          <button
+            onClick={() =>
+              value!.store.addWindow({
+                children: <TestWindow />,
+                transform: {
+                  size: [300, 70],
+                },
+                constraints: {
+                  min: [300, 70],
+                },
+              })
+            }
+          >
+            Add window!
+          </button>
+        )}
       </WindowManagerContext.Consumer>
     </ApplicationProvider>
   );

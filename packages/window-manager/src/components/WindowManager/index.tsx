@@ -1,4 +1,4 @@
-import type { Props } from "./types.ts";
+import type { Props } from "./types";
 import type { ComponentChildren } from "preact";
 import { observer } from "mobx-react";
 import { useWindowManager } from "@/contexts";
@@ -22,4 +22,4 @@ function WindowManager(_: Props): ComponentChildren {
 
 export default observer(WindowManager);
 
-export type { Props as WindowManagerProps } from "./types.ts";
+export type { Props as WindowManagerProps } from "./types";

@@ -1,4 +1,4 @@
-import WindowManagerStore from "@/stores/WindowManagerStore.ts";
+import type WindowManagerStore from "@/stores/WindowManagerStore";
 
 export interface Value {
   readonly store: WindowManagerStore;

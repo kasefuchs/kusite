@@ -1,10 +1,10 @@
-import type { IWindowDescriptor } from "@/types";
+import type { IWindowDescriptor, WindowPosition, WindowSize } from "@/types";
 
 export interface Value {
   readonly descriptor: IWindowDescriptor;
 
   close(): boolean;
   focus(): number;
-  updatePosition(x: number, y: number): void;
-  updateSize(width: number, height: number): void;
+  updatePosition(position: WindowPosition): void;
+  updateSize(size: WindowSize): void;
 }

@@ -1,3 +1,4 @@
+import type { WindowPosition, WindowSize } from "@/types";
 import type { ComponentChildren } from "preact";
 import type { Props } from "./types";
 import WindowInstanceContext, { type WindowInstanceContextValue } from "@/contexts/WindowInstanceContext";
@@ -14,11 +15,11 @@ export default function WindowInstanceProvider({ descriptor, children }: Props):
     focus(): number {
       return store.focusWindow(descriptor.id);
     },
-    updatePosition(x: number, y: number) {
-      return store.updateWindowPosition(descriptor.id, x, y);
+    updatePosition(position: WindowPosition): void {
+      return store.updateWindowPosition(descriptor.id, position);
     },
-    updateSize(width: number, height: number) {
-      return store.updateWindowSize(descriptor.id, width, height);
+    updateSize(size: WindowSize): void {
+      return store.updateWindowSize(descriptor.id, size);
     },
   });
 
