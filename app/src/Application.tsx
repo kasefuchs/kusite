@@ -11,8 +11,7 @@ export default function Application(): ComponentChildren {
         {(value) => (
           <button
             onClick={() =>
-              value!.store.addWindow({
-                children: <TestWindow />,
+              value!.addWindow(<TestWindow />, {
                 transform: {
                   size: [300, 70],
                 },

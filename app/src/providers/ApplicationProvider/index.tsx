@@ -9,7 +9,7 @@ export default function ApplicationProvider(props: Props): ComponentChildren {
     <RootStoreProvider>
       <RootStoreContext.Consumer>
         {(rootStore) => (
-          <WindowManagerProvider store={rootStore!.windowManager}>{props.children}</WindowManagerProvider>
+          <WindowManagerProvider manager={rootStore!.windowManager}>{props.children}</WindowManagerProvider>
         )}
       </RootStoreContext.Consumer>
     </RootStoreProvider>

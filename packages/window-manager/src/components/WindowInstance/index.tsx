@@ -1,4 +1,3 @@
-import type { Props } from "./types";
 import type { ComponentChildren } from "preact";
 import { observer } from "mobx-react";
 import Draggable, { DraggableEventHandler } from "react-draggable";
@@ -6,15 +5,15 @@ import { useWindowInstance } from "@/contexts";
 import { Resizable, ResizeCallbackData } from "react-resizable";
 import * as styles from "./index.module.scss";
 
-function WindowInstance(_: Props): ComponentChildren {
+function WindowInstance(): ComponentChildren {
   const instance = useWindowInstance();
-  const { children, handles, transform, constraints } = instance.descriptor;
+  const { children, handles, transform, constraints } = instance;
 
   const handleFocus = () => {
     instance.focus();
   };
 
-  const handleDragStop: DraggableEventHandler = (_, { x, y }) => {
+  const handleDrag: DraggableEventHandler = (_, { x, y }) => {
     instance.updatePosition([x, y]);
   };
 
@@ -34,7 +33,7 @@ function WindowInstance(_: Props): ComponentChildren {
     <Draggable
       position={{ x: transform.position[0], y: transform.position[1] }}
       onStart={handleFocus}
-      onStop={handleDragStop}
+      onDrag={handleDrag}
       handle={`.${handles.dragClassName}`}
     >
       <Resizable
@@ -58,5 +57,3 @@ function WindowInstance(_: Props): ComponentChildren {
 }
 
 export default observer(WindowInstance);
-
-export type { Props as WindowInstanceProps } from "./types";

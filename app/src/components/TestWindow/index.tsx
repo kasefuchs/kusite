@@ -8,8 +8,8 @@ function TestWindow(): ComponentChildren {
 
   return (
     <div className={`window ${styles.window}`}>
-      <div className={`title-bar ${instance.descriptor.handles.dragClassName}`}>
-        <span className="title-bar-text" children={instance.descriptor.id} />
+      <div className={`title-bar ${instance.handles.dragClassName}`}>
+        <span className="title-bar-text" children={instance.id} />
         <div className="title-bar-controls">
           <button aria-label="Close" onClick={() => instance.close()} />
         </div>
@@ -17,21 +17,15 @@ function TestWindow(): ComponentChildren {
       <div className="window-body">
         <span className={styles.position}>
           <span>
-            <b>X:</b> {instance.descriptor.transform.position[0]}
+            <b>Position:</b> ({instance.transform.position.join(", ")})
           </span>
           <span>
-            <b>Y:</b> {instance.descriptor.transform.position[1]}
-          </span>
-          <span>
-            <b>Z:</b> {instance.descriptor.transform.zIndex}
+            <b>Z index:</b> {instance.transform.zIndex}
           </span>
         </span>
         <span className={styles.size}>
           <span>
-            <b>Width:</b> {instance.descriptor.transform.size[0]}
-          </span>
-          <span>
-            <b>Height:</b> {instance.descriptor.transform.size[1]}
+            <b>Size:</b> ({instance.transform.size.join(", ")})
           </span>
         </span>
       </div>

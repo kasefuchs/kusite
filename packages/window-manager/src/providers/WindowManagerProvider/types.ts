@@ -1,7 +1,8 @@
 import type { ComponentChildren } from "preact";
-import WindowManagerStore from "@/stores/WindowManagerStore";
+import type { WindowManagerStore } from "@/stores";
 
 export interface Props {
-  store: WindowManagerStore;
   children: ComponentChildren;
+
+  manager: WindowManagerStore;
 }

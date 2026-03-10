@@ -6,12 +6,12 @@ type CompositeStoreState = Record<string, unknown>;
 export default abstract class CompositeSerializableStore implements ISerializableStore<CompositeStoreState> {
   protected abstract stores: ISerializableStore[];
 
-  protected constructor(public readonly id: string) {}
+  protected constructor(public readonly namespace: string) {}
 
   serialize(): CompositeStoreState {
     const data: CompositeStoreState = {};
     for (const store of this.stores) {
-      data[store.id] = store.serialize();
+      data[store.namespace] = store.serialize();
     }
 
     return data;
@@ -19,7 +19,7 @@ export default abstract class CompositeSerializableStore implements ISerializabl
 
   deserialize(data: CompositeStoreState): AsyncOrSync<void> {
     for (const store of this.stores) {
-      const storeData = data[store.id];
+      const storeData = data[store.namespace];
       if (storeData) store.deserialize(storeData);
     }
   }

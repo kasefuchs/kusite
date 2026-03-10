@@ -12,13 +12,13 @@ export default class PersistentStore {
   public setup(): IReactionDisposer {
     return reaction(
       () => stringify(this.store.serialize()),
-      async (serialized) => this.storage.setItem(this.store.id, JSON.parse(serialized)),
-      { name: `PersistentStoreReaction(${this.store.id})` },
+      async (serialized) => this.storage.setItem(this.store.namespace, JSON.parse(serialized)),
+      { name: `PersistentStoreReaction(${this.store.namespace})` },
     );
   }
 
   public async deserialize(): Promise<void> {
-    const data = await this.storage.getItem(this.store.id);
+    const data = await this.storage.getItem(this.store.namespace);
     if (data) await this.store.deserialize(data);
   }
 }

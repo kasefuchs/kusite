@@ -1,3 +1,1 @@
-export default interface IStore {
-  readonly id: string;
-}
+export default interface IStore {}

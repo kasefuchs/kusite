@@ -1,11 +1,2 @@
-export {
-  default as WindowInstanceContext,
-  useWindowInstance,
-  type WindowInstanceContextValue,
-} from "./WindowInstanceContext";
-
-export {
-  default as WindowManagerContext,
-  useWindowManager,
-  type WindowManagerContextValue,
-} from "./WindowManagerContext";
+export { default as WindowInstanceContext, useWindowInstance } from "./WindowInstanceContext";
+export { default as WindowManagerContext, useWindowManager } from "./WindowManagerContext";

@@ -1,14 +1,9 @@
 import type { ComponentChildren } from "preact";
 import type { Props } from "./types";
-import WindowManagerContext, { WindowManagerContextValue } from "@/contexts/WindowManagerContext";
-import { useRef } from "preact/hooks";
+import { WindowManagerContext } from "@/contexts";
 
-export default function WindowManagerProvider(props: Props): ComponentChildren {
-  const valueRef = useRef<WindowManagerContextValue>({
-    store: props.store,
-  });
-
-  return <WindowManagerContext.Provider value={valueRef.current} children={props.children} />;
+export default function WindowManagerProvider({ manager, children }: Props): ComponentChildren {
+  return <WindowManagerContext.Provider value={manager} children={children} />;
 }
 
 export type { Props as WindowManagerProviderProps } from "./types";

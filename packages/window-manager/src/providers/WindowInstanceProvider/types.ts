@@ -1,7 +1,8 @@
 import type { ComponentChildren } from "preact";
-import type { IWindowDescriptor } from "@/types";
+import type { WindowInstanceStore } from "@/stores";
 
 export interface Props {
   children: ComponentChildren;
-  descriptor: IWindowDescriptor;
+
+  instance: WindowInstanceStore;
 }
