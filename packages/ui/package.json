@@ -30,7 +30,7 @@
   "dependencies": {
     "@swc/helpers": "^0.5.19",
     "clsx": "^2.1.1",
-    "lodash.mergewith": "^4.6.2",
+    "lodash": "^4.17.23",
     "preact": "^10.29.0",
     "xp.css": "^0.2.6"
   },
@@ -41,7 +41,6 @@
     "@rsbuild/plugin-typed-css-modules": "^1.2.2",
     "@rslib/core": "^0.6.9",
     "@types/lodash": "^4.17.24",
-    "@types/lodash.mergewith": "^4.6.9",
     "typescript": "^5.9.3"
   }
 }

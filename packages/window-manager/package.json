@@ -30,7 +30,7 @@
   "dependencies": {
     "@kusite/store": "workspace:^",
     "@swc/helpers": "^0.5.19",
-    "lodash.mergewith": "^4.6.2",
+    "lodash": "^4.17.23",
     "mobx": "^6.15.0",
     "mobx-react": "^9.2.1",
     "preact": "^10.29.0",
@@ -44,7 +44,7 @@
     "@rsbuild/plugin-sass": "^1.5.1",
     "@rsbuild/plugin-typed-css-modules": "^1.2.2",
     "@rslib/core": "^0.6.9",
-    "@types/lodash.mergewith": "^4.6.9",
+    "@types/lodash": "^4.17.24",
     "@types/react-resizable": "^3.0.8",
     "ts-essentials": "^10.1.1",
     "typescript": "^5.9.3"

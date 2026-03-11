@@ -1,3 +1,11 @@
 .window {
   position: absolute !important;
+
+  & > :global(.react-resizable-handle) {
+    width: 8px;
+    height: 8px;
+    margin: 0;
+    opacity: 0;
+    transform: revert;
+  }
 }

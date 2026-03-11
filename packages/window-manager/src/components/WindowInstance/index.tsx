@@ -7,7 +7,7 @@ import * as styles from "./index.module.scss";
 
 function WindowInstance(): ComponentChildren {
   const instance = useWindowInstance();
-  const { children, handles, transform, constraints } = instance;
+  const { handles, transform, constraints } = instance.descriptor;
 
   const handleFocus = () => {
     instance.focus();
@@ -41,6 +41,7 @@ function WindowInstance(): ComponentChildren {
         height={transform.size[1]}
         onResize={handleResize}
         onResizeStart={handleFocus}
+        handleSize={[8, 8]}
         resizeHandles={handles.resizeDirections}
         minConstraints={constraints.min}
         maxConstraints={constraints.max}
@@ -48,7 +49,7 @@ function WindowInstance(): ComponentChildren {
         <div
           style={{ width: transform.size[0], height: transform.size[1], zIndex: transform.zIndex }}
           className={styles.window}
-          children={children}
+          children={instance.children}
           onClick={handleFocus}
         />
       </Resizable>

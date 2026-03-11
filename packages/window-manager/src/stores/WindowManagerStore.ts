@@ -1,11 +1,17 @@
-import mergeWith from "lodash.mergewith";
 import { ulid } from "ulid";
+import { mergeWith, type MergeWithCustomizer } from "lodash";
 import { action, computed, observable, type ObservableMap } from "mobx";
 import type { IStore } from "@kusite/store";
 import type { IWindowDescriptor, WindowPosition, WindowSize } from "@/types";
 import type { ComponentChild } from "preact";
 import type { DeepPartial } from "ts-essentials";
 import WindowInstanceStore from "@/stores/WindowInstanceStore";
+
+const mergeDescriptorCustomizer: MergeWithCustomizer = (_, srcValue) => {
+  if (Array.isArray(srcValue)) return srcValue;
+
+  return undefined;
+};
 
 export default class WindowManagerStore implements IStore {
   @observable
@@ -15,7 +21,7 @@ export default class WindowManagerStore implements IStore {
   public get maxZIndex(): number {
     const zIndices = this.instances
       .values()
-      .map(({ transform }) => transform.zIndex)
+      .map(({ descriptor }) => descriptor.transform.zIndex)
       .toArray();
 
     return zIndices.length ? Math.max(...zIndices) : 100;
@@ -36,12 +42,10 @@ export default class WindowManagerStore implements IStore {
       constraints: {},
     };
 
-    const merged = mergeWith(base, options, (_: any, source): any => {
-      if (Array.isArray(source)) return source;
-    });
+    const descriptor = mergeWith(base, options, mergeDescriptorCustomizer);
 
     const id = ulid();
-    const instance = new WindowInstanceStore(id, this, component, merged);
+    const instance = new WindowInstanceStore(id, this, component, descriptor);
     this.instances.set(id, instance);
     return instance;
   }
