@@ -1,5 +1,6 @@
 import clsx from "clsx";
-import { mergeWith, type MergeWithCustomizer } from "lodash";
+import mergeWith from "lodash/mergeWith";
+import type { MergeWithCustomizer } from "lodash";
 
 export const mergeComponentPropsCustomizer: MergeWithCustomizer = (objValue, srcValue, key) => {
   switch (key) {

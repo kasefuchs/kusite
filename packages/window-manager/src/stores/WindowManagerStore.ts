@@ -1,10 +1,11 @@
 import { ulid } from "ulid";
-import { mergeWith, type MergeWithCustomizer } from "lodash";
 import { action, computed, observable, type ObservableMap } from "mobx";
 import type { IStore } from "@kusite/store";
 import type { IWindowDescriptor, WindowPosition, WindowSize } from "@/types";
+import type { MergeWithCustomizer } from "lodash";
 import type { ComponentChild } from "preact";
 import type { DeepPartial } from "ts-essentials";
+import mergeWith from "lodash/mergeWith";
 import WindowInstanceStore from "@/stores/WindowInstanceStore";
 
 const mergeDescriptorCustomizer: MergeWithCustomizer = (_, srcValue) => {
