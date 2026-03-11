@@ -1,5 +1,6 @@
 import type { ComponentChildren } from "preact";
 import { useWindowInstance } from "@kusite/window-manager";
+import { CloseButton, TitleBar, TitleBarControls, TitleBarText, Window, WindowBody } from "@kusite/ui";
 import { observer } from "mobx-react";
 import * as styles from "./index.module.scss";
 
@@ -7,14 +8,14 @@ function TestWindow(): ComponentChildren {
   const instance = useWindowInstance();
 
   return (
-    <div className={`window ${styles.window}`}>
-      <div className={`title-bar ${instance.handles.dragClassName}`}>
-        <span className="title-bar-text" children={instance.id} />
-        <div className="title-bar-controls">
-          <button aria-label="Close" onClick={() => instance.close()} />
-        </div>
-      </div>
-      <div className="window-body">
+    <Window className={styles.window}>
+      <TitleBar className={instance.handles.dragClassName}>
+        <TitleBarText children={instance.id} />
+        <TitleBarControls>
+          <CloseButton onClick={() => instance.close()} />
+        </TitleBarControls>
+      </TitleBar>
+      <WindowBody>
         <span className={styles.position}>
           <span>
             <b>Position:</b> ({instance.transform.position.join(", ")})
@@ -28,8 +29,8 @@ function TestWindow(): ComponentChildren {
             <b>Size:</b> ({instance.transform.size.join(", ")})
           </span>
         </span>
-      </div>
-    </div>
+      </WindowBody>
+    </Window>
   );
 }
 

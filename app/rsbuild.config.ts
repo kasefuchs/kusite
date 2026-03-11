@@ -16,6 +16,7 @@ export default defineConfig((config: ConfigParams): RsbuildConfig => {
       pluginTypedCSSModules(),
     ],
     output: {
+      sourceMap: true,
       cssModules: { namedExport: true },
     },
     resolve: {
