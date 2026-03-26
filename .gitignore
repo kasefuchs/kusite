@@ -8,11 +8,10 @@
 
 # --- Node ---
 # Dependencies
-.pnpm-store/
 node_modules/
 
 # Lockfiles
-pnpm-lock.yaml
+bun.lock
 
 # --- Tools / Bundlers ---
 # Rspack / Rslib

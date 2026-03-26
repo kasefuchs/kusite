@@ -41,7 +41,7 @@ function WindowInstance(): ComponentChildren {
         height={transform.size[1]}
         onResize={handleResize}
         onResizeStart={handleFocus}
-        handleSize={[8, 8]}
+        handleSize={[12, 12]}
         resizeHandles={handles.resizeDirections}
         minConstraints={constraints.min}
         maxConstraints={constraints.max}
