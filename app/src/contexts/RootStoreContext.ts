@@ -1,6 +1,6 @@
 import { createContext } from "preact";
-import RootStore from "@/stores/RootStore";
 import { useContext } from "preact/hooks";
+import RootStore from "@/stores/RootStore";
 
 const RootStoreContext = createContext<RootStore | null>(null);
 

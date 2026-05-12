@@ -1,30 +1,14 @@
-import type { ComponentChildren } from "preact";
+import type { ComponentChild } from "preact";
 import ApplicationProvider from "@/providers/ApplicationProvider";
-import { WindowManager, WindowManagerContext } from "@kusite/window-manager";
-import TestWindow from "@/components/TestWindow";
+import Initializer from "./Initializer";
+import Router from "./Router";
 
-export default function Application(): ComponentChildren {
+export default function Application(): ComponentChild {
   return (
     <ApplicationProvider>
-      <WindowManager />
-      <WindowManagerContext.Consumer>
-        {(value) => (
-          <button
-            onClick={() =>
-              value!.addWindow(<TestWindow />, {
-                transform: {
-                  size: [300, 70],
-                },
-                constraints: {
-                  min: [300, 70],
-                },
-              })
-            }
-          >
-            Add window!
-          </button>
-        )}
-      </WindowManagerContext.Consumer>
+      <Initializer>
+        <Router />
+      </Initializer>
     </ApplicationProvider>
   );
 }

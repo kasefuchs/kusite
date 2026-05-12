@@ -20,8 +20,6 @@
   ],
   "dependencies": {
     "@kusite/store": "workspace:^",
-    "@kusite/ui": "workspace:^",
-    "@kusite/window-manager": "workspace:^",
     "mobx": "^6.15.0",
     "mobx-react": "^9.2.1",
     "preact": "^10.29.0"

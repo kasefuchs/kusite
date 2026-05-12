@@ -1,5 +1,3 @@
-import "@kusite/window-manager/index.css";
-
 import Application from "@/Application";
 import { createElement, render } from "preact";
 
