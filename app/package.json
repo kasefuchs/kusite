@@ -22,7 +22,8 @@
     "@kusite/store": "workspace:^",
     "mobx": "^6.15.0",
     "mobx-react": "^9.2.1",
-    "preact": "^10.29.0"
+    "preact": "^10.29.0",
+    "wouter-preact": "^3.9.0"
   },
   "devDependencies": {
     "@kusite/tsconfig": "workspace:^",

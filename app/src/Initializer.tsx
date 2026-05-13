@@ -1,7 +1,7 @@
 import type { ComponentChild, ComponentChildren } from "preact";
 import type { IReactionDisposer } from "mobx";
 import { useRef, useState, useEffect } from "preact/hooks";
-import { useRootStore } from "./contexts/RootStoreContext";
+import { useRootStore } from "@/contexts/RootStoreContext";
 import { PersistentStore } from "@kusite/store";
 
 export interface InitializerProps {
